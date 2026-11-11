@@ -215,6 +215,8 @@ footer{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin
 a.work{text-decoration:none}
 .work.real{flex:0 0 min(86vw,966px);aspect-ratio:1200/630;align-self:flex-start;background:#0b0b0d;cursor:pointer}
 .work.real:hover .art{transform:scale(1.03)}
+.work.gran{background:#efece4;color:#141414}
+.work.gran .art{background:none}
 .work.real .tag{position:absolute;right:1.2rem;bottom:1.2rem;padding:.35rem .9rem;border-radius:99px;background:#0b0b0dcc;color:#fff;font-size:.85rem;opacity:1}
 :root{interpolate-size:allow-keywords;--e:cubic-bezier(.2,.8,.2,1)}
 .js .reveal{opacity:0;transform:translateY(32px);transition:opacity .9s var(--e) var(--d,0ms),transform .9s var(--e) var(--d,0ms),padding .3s}
@@ -502,6 +504,7 @@ nav::after{bottom:2px}
   <div class="wrap"><h2>Что получается, когда двое работают <em>вместе</em></h2></div>
   <div class="rail" id="rail">
     <a class="work w1 real" href="https://fsduyx.github.io/techno/index.html" target="_blank" rel="noopener" aria-label="Технобокс — магазин техники в Симферополе: открыть сайт" title="Сайт магазина «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag">Сайт магазина</small></a>
+    <a class="work gran real" href="https://fsduyx.github.io/gran/index.html" target="_blank" rel="noopener" aria-label="Грань — сайт архитектурного бюро: открыть" title="Сайт архитектурного бюро «Грань» (демо-проект)"><div class="art"><img onerror="this.remove()" src="gran-1200.webp" srcset="gran-640.webp 640w, gran-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт архитектурного бюро «Грань» — демонстрационный проект Cread"></div><small class="tag">Сайт бюро</small></a>
   </div>
   <div class="wrap"><div class="rail-ctl"><button class="rbtn" data-d="-1" aria-label="Назад">←</button><button class="rbtn" data-d="1" aria-label="Вперёд">→</button><div class="bar"><i></i></div></div></div>
 </div></section>
