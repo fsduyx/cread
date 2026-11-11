@@ -393,6 +393,7 @@ nav .logo{font-size:.95rem}
 .hero-meta,.hint{display:none}
 .hero-row p{font-size:1rem}
 }
+.rail-ctl{display:none}
 /* ===== /mobile polish ===== */
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["ProfessionalService"],"@id":"https://cread.studio/#org","name":"Cread","url":"https://cread.studio/","logo":"https://cread.studio/icon-512.png","image":"https://cread.studio/og-image.png","email":"hello@cread.studio","description":"Cread — веб-студия из двух специалистов: дизайнер и верстальщик. Название, логотип и фирменный стиль, дизайн сайта, вёрстка и запуск под ключ.","slogan":"Дизайнер придумывает. Верстальщик строит.","knowsLanguage":"ru","knowsAbout":["разработка сайтов","дизайн сайтов","вёрстка сайтов","логотип и фирменный стиль","нейминг","лендинг"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Лендинг под ключ","description":"Одна страница, дизайн и вёрстка, запуск. Срок 2–3 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":90000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Сайт с нуля","description":"До восьми страниц, логотип и стиль, анимации. Месяц поддержки после запуска. Срок 4–6 недель."},"priceSpecification":{"@type":"PriceSpecification","minPrice":220000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Вёрстка сайта по макету","description":"Превращаем готовый макет в страницу. Срок 1–2 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":60000,"priceCurrency":"RUB"}}]},{"@type":"WebSite","@id":"https://cread.studio/#website","url":"https://cread.studio/","name":"Cread","inLanguage":"ru","publisher":{"@id":"https://cread.studio/#org"}},{"@type":"WebPage","@id":"https://cread.studio/#webpage","url":"https://cread.studio/","name":"Cread — веб-студия: дизайн и вёрстка сайтов под ключ","isPartOf":{"@id":"https://cread.studio/#website"},"about":{"@id":"https://cread.studio/#org"},"inLanguage":"ru"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно заказать только дизайн или только вёрстку?","acceptedAnswer":{"@type":"Answer","text":"Можно. Работаем и с чужими макетами, и с проектами, где нужен только дизайн."}},{"@type":"Question","name":"Как платить?","acceptedAnswer":{"@type":"Answer","text":"Половина перед началом, вторая половина после того, как вы приняли результат. Всё записываем в договор."}},{"@type":"Question","name":"Что вы отдаёте после запуска?","acceptedAnswer":{"@type":"Answer","text":"Исходники, доступы и короткую памятку, как менять тексты и картинки самому."}},{"@type":"Question","name":"Сколько будет правок?","acceptedAnswer":{"@type":"Answer","text":"Каждый этап согласуем до следующего, поэтому обычно хватает одной. Если нужно больше, договоримся отдельно."}}]}]}</script>
@@ -499,9 +500,6 @@ nav .logo{font-size:.95rem}
   <div class="wrap"><h2>Что получается, когда двое работают <em>вместе</em></h2></div>
   <div class="rail" id="rail">
     <a class="work w1 real" href="https://fsduyx.github.io/techno/index.html" target="_blank" rel="noopener" aria-label="Технобокс — магазин техники в Симферополе: открыть сайт" title="Сайт магазина «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag">Сайт магазина</small></a>
-    <article class="work w2"><div class="art"></div><small>Финтех-сервис</small><h3>Орбита</h3></article>
-    <article class="work w3"><div class="art"></div><small>Бюро архитекторов</small><h3>Грань</h3></article>
-    <article class="work w4"><div class="art"></div><small>Интернет-магазин</small><h3>Лупа</h3></article>
   </div>
   <div class="wrap"><div class="rail-ctl"><button class="rbtn" data-d="-1" aria-label="Назад">←</button><button class="rbtn" data-d="1" aria-label="Вперёд">→</button><div class="bar"><i></i></div></div></div>
 </div></section>
@@ -524,17 +522,6 @@ nav .logo{font-size:.95rem}
       <div><h3>Верстальщик</h3><p>Смотрит на макет, пока он ещё не готов, и сразу говорит, что получится быстро, а что лучше упростить. Сайт собирает вручную и проверяет на живых телефонах.</p></div>
     </div>
     <a class="btn more" href="about.html">Познакомиться с нами <span>→</span></a>
-  </div>
-</section>
-
-<section id="reviews" style="padding-top:2rem">
-  <div class="wrap">
-    <h2>Что говорят <em>клиенты</em></h2>
-    <div class="qs">
-      <figure class="quote"><figcaption class="qh"><span class="av" style="--c:#ee7a3c" aria-hidden="true">А</span><span><b>Анна</b><small>основательница кофейни «Мята»</small></span></figcaption><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Показали три названия и объяснили каждое. Выбрали за один созвон, а через месяц кофейня уже работала с новым сайтом.</p></figure>
-      <figure class="quote"><figcaption class="qh"><span class="av" style="--c:#4caf7d" aria-hidden="true">И</span><span><b>Игорь</b><small>продакт-менеджер «Орбиты»</small></span></figcaption><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Макет и сайт совпали до пикселя. У прошлых подрядчиков мы с этим мучились месяцами.</p></figure>
-      <figure class="quote"><figcaption class="qh"><span class="av" style="--c:#ec477e" aria-hidden="true">М</span><span><b>Мария</b><small>партнёр бюро «Грань»</small></span></figcaption><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Одна правка вместо трёх, как и обещали. И ни одного менеджера между нами.</p></figure>
-    </div>
   </div>
 </section>
 
