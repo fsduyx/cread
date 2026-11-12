@@ -441,11 +441,11 @@ nav .logo{font-size:.95rem}
 @keyframes dh8{0%,48%{opacity:0}49%,68%{opacity:1}73%,100%{opacity:0}}
 .dsg .p8{animation:dp8 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h8{animation:dh8 9s linear infinite}
 /* small touches */
+.vs div:last-child li::before{content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:#ff86ad;margin-right:.75rem;vertical-align:middle;position:relative;top:-.08em}
 .steps{counter-reset:st}
 .steps li h3::before{counter-increment:st;content:"0" counter(st);display:block;margin-bottom:.45rem;font:500 .8rem/1 var(--m);letter-spacing:.08em;color:var(--acc)}
 .mq span:nth-child(even){animation:mqs 7s linear infinite}
 @keyframes mqs{to{transform:rotate(360deg)}}
-.vs div:last-child li::before{content:"✦";margin-right:.6rem;color:#ff86ad}
 .qh .av{transition:transform .5s var(--e)}
 @media(hover:hover){
 .mq:hover div{animation-play-state:paused}
@@ -563,9 +563,7 @@ html.fl *,html.fl *::before,html.fl *::after{animation-play-state:paused!importa
   <div class="wrap"><h2>Что получается, когда двое работают <em>вместе</em></h2></div>
   <div class="rail" id="rail">
     <a class="work w1 real" href="https://fsduyx.github.io/techno/tradein.html" target="_blank" rel="noopener" aria-label="Технобокс — магазин техники в Симферополе: открыть сайт" title="Сайт магазина «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag">Сайт магазина</small></a>
-    <article class="work w2"><div class="art"></div><small>Финтех-сервис</small><h3>Орбита</h3></article>
-    <article class="work w3"><div class="art"></div><small>Бюро архитекторов</small><h3>Грань</h3></article>
-    <article class="work w4"><div class="art"></div><small>Интернет-магазин</small><h3>Лупа</h3></article>
+    <a class="work w3 real" href="https://fsduyx.github.io/gran/" target="_blank" rel="noopener" aria-label="Грань — сайт бюро архитекторов: открыть сайт" title="Сайт бюро «Грань»"><div class="art"><img onerror="this.remove()" src="gran-1200.webp" srcset="gran-640.webp 640w, gran-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт бюро архитекторов «Грань» — пример работы Cread"></div><small class="tag">Сайт бюро архитекторов</small></a>
   </div>
   <div class="wrap"><div class="rail-ctl"><button class="rbtn" data-d="-1" aria-label="Назад">←</button><button class="rbtn" data-d="1" aria-label="Вперёд">→</button><div class="bar"><i></i></div></div></div>
 </div></section>
