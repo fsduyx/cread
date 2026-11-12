@@ -20,9 +20,18 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Onest:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&family=JetBrains+Mono:wght@500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Onest:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Onest:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Onest:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script>
+(function(){
+  var r=document.documentElement;
+  if(!document.fonts||!document.fonts.load)return;
+  r.classList.add('fl');
+  var T='Aa Яя 0 ₽ № «»',t=setTimeout(done,2500);
+  function done(){clearTimeout(t);r.classList.remove('fl')}
+  Promise.all(['900 1em Unbounded','700 1em Unbounded','500 1em Unbounded','400 1em Onest','500 1em Onest','600 1em Onest','italic 500 1em "Playfair Display"','500 1em "JetBrains Mono"'].map(function(f){return document.fonts.load(f,T)})).then(done,done);
+})();
+</script>
+
 <style>
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
 .skip{position:absolute;left:-9999px;top:0;z-index:200;background:#fff;color:#0a0036;padding:.7rem 1.1rem;border-radius:99px;font:600 .95rem var(--b)}
@@ -91,21 +100,12 @@ nav a.l:hover{opacity:1}
 /* duo */
 .duo-h{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:end;margin-bottom:2.5rem}
 .duo{display:flex;gap:1rem;min-height:520px}
-.panel{flex:1;border-radius:28px;padding:clamp(1.4rem,3vw,2.4rem);display:flex;flex-direction:column;justify-content:space-between;gap:2rem;overflow:hidden;position:relative;transition:flex .7s cubic-bezier(.2,.8,.2,1)}
-.panel:hover,.panel:focus-within{flex:1.55}
+.panel{flex:1;border-radius:28px;padding:clamp(1.4rem,3vw,2.4rem);display:flex;flex-direction:column;justify-content:space-between;gap:2rem;overflow:hidden;position:relative;}
 .panel h3{font-size:clamp(1.8rem,3.6vw,3rem);font-weight:700}
 .panel ul{margin:1rem 0 0;padding:0;list-style:none;display:grid;gap:.4rem}
 .panel li{padding:.55rem 0;border-top:1px solid currentColor;border-color:color-mix(in srgb,currentColor 30%,transparent)}
 .p1{background:var(--card);color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
 .p2{background:var(--ink);color:#ecebff}
-.shapes{position:absolute;right:-30px;top:-30px;width:220px;height:220px;opacity:.9}
-.shapes b{position:absolute;display:block;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
-.shapes b:nth-child(1){width:110px;height:110px;border-radius:50%;background:var(--blue);right:50px;top:50px}
-.shapes b:nth-child(2){width:80px;height:80px;background:var(--acc);right:100px;top:120px;border-radius:14px}
-.shapes b:nth-child(3){width:0;height:0;border:40px solid transparent;border-bottom:70px solid var(--fg);right:30px;top:140px}
-.p1:hover .shapes b:nth-child(1){transform:translate(-40px,30px) scale(1.15)}
-.p1:hover .shapes b:nth-child(2){transform:rotate(60deg) translate(-20px,-30px)}
-.p1:hover .shapes b:nth-child(3){transform:rotate(180deg) translate(10px,10px)}
 pre{margin:0;font:500 .85rem/1.7 ui-monospace,'SF Mono',Menlo,Consolas,monospace;color:#a9a5ff;overflow:hidden;white-space:pre-wrap}
 pre s{text-decoration:none;color:var(--acc)}pre u{text-decoration:none;color:#fff}
 pre::after{content:"";display:inline-block;width:8px;height:1em;background:var(--acc);vertical-align:-2px;margin-left:3px;animation:bl 1s steps(2) infinite}
@@ -215,8 +215,6 @@ footer{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin
 a.work{text-decoration:none}
 .work.real{flex:0 0 min(86vw,966px);aspect-ratio:1200/630;align-self:flex-start;background:#0b0b0d;cursor:pointer}
 .work.real:hover .art{transform:scale(1.03)}
-.work.gran{background:#efece4;color:#141414}
-.work.gran .art{background:none}
 .work.real .tag{position:absolute;right:1.2rem;bottom:1.2rem;padding:.35rem .9rem;border-radius:99px;background:#0b0b0dcc;color:#fff;font-size:.85rem;opacity:1}
 :root{interpolate-size:allow-keywords;--e:cubic-bezier(.2,.8,.2,1)}
 .js .reveal{opacity:0;transform:translateY(32px);transition:opacity .9s var(--e) var(--d,0ms),transform .9s var(--e) var(--d,0ms),padding .3s}
@@ -360,15 +358,15 @@ section{padding:clamp(3.5rem,14vw,5rem) 0}
 .panel{border-radius:24px;padding:1.4rem 1.3rem 1.5rem;gap:1.6rem}
 .panel,.panel:hover{min-height:0}
 .panel h3{position:relative;z-index:1}
-.shapes{transform:scale(.62);transform-origin:top right;right:-8px;top:-8px}
 pre{font-size:.8rem}
 .steps{padding-left:2rem;margin-top:2rem}
 .steps li::before{left:-2rem}
 .steps h3{font-size:1.35rem}
 .rail{gap:.9rem;padding:1.6rem max(1.1rem,env(safe-area-inset-left,0px)) 1.4rem;scroll-padding-inline:1.1rem;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
 .rail::-webkit-scrollbar{display:none}
-.work{flex:0 0 min(88vw,520px);aspect-ratio:1200/630;border-radius:22px;scroll-snap-stop:always}
-.work.real{flex:0 0 min(88vw,520px);aspect-ratio:1200/630;align-self:auto}
+.work{flex:0 0 min(76vw,380px);border-radius:22px;scroll-snap-stop:always}
+.work.real{flex:0 0 min(76vw,380px);aspect-ratio:3/4;align-self:auto}
+.work.real .art img{object-position:center}
 .work h3{font-size:1.7rem}
 .vs{margin-top:2rem;gap:.8rem}
 .vs div{border-radius:22px}
@@ -395,10 +393,73 @@ nav .logo{font-size:.95rem}
 .hero-meta,.hint{display:none}
 .hero-row p{font-size:1rem}
 }
-.rail-ctl{display:none}
-nav .btn{height:36px;padding:0 1rem;font-size:.9rem}
-nav::after{bottom:2px}
 /* ===== /mobile polish ===== */
+
+/* designer: logo being drawn */
+.dsg{display:block;width:100%;max-width:22rem;height:auto;overflow:visible}
+.dsg .gl{fill:none;stroke:var(--fg);stroke-opacity:.3;stroke-width:1;stroke-dasharray:1;stroke-dashoffset:0}
+.dsg .pt{stroke:var(--acc);stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:0;fill:var(--acc);fill-opacity:1}
+.dsg .hd{fill:#fff;stroke:var(--acc);stroke-width:1.5;opacity:0}
+.dsg .tg rect{fill:var(--acc)}
+.dsg .tg text{fill:var(--ink);font:500 10px var(--m)}
+.dsg .fl{transform-origin:80px 82px;transition:transform .9s var(--e)}
+@media(hover:hover){.p1:hover .dsg .fl{transform:rotate(45deg)}}
+.dsg .lg{animation:lf 9s linear infinite}
+.dsg .g1{animation:gd1 9s cubic-bezier(.3,.7,.2,1) infinite}
+.dsg .g2{animation:gd1 9s cubic-bezier(.3,.7,.2,1) .2s infinite}
+.dsg .g3{animation:gd2 9s cubic-bezier(.3,.7,.2,1) infinite}
+.dsg .tg{animation:dt 9s cubic-bezier(.3,.7,.2,1) infinite}
+@keyframes lf{0%,90%{opacity:1}97%,100%{opacity:0}}
+@keyframes gd1{0%,2%{stroke-dashoffset:1}14%,100%{stroke-dashoffset:0}}
+@keyframes gd2{0%,6%{stroke-dashoffset:1}20%,100%{stroke-dashoffset:0}}
+@keyframes dt{0%,76%{opacity:0;transform:translateY(5px)}81%,100%{opacity:1;transform:none}}
+@keyframes dp0{0%,12%{stroke-dashoffset:1;fill-opacity:0}20%{stroke-dashoffset:0;fill-opacity:0}40%{stroke-dashoffset:0;fill-opacity:0}45%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh0{0%,20%{opacity:0}21%,40%{opacity:1}45%,100%{opacity:0}}
+.dsg .p0{animation:dp0 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h0{animation:dh0 9s linear infinite}
+@keyframes dp1{0%,19%{stroke-dashoffset:1;fill-opacity:0}27%{stroke-dashoffset:0;fill-opacity:0}54%{stroke-dashoffset:0;fill-opacity:0}59%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh1{0%,27%{opacity:0}28%,54%{opacity:1}59%,100%{opacity:0}}
+.dsg .p1{animation:dp1 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h1{animation:dh1 9s linear infinite}
+@keyframes dp2{0%,22%{stroke-dashoffset:1;fill-opacity:0}30%{stroke-dashoffset:0;fill-opacity:0}56%{stroke-dashoffset:0;fill-opacity:0}61%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh2{0%,30%{opacity:0}31%,56%{opacity:1}61%,100%{opacity:0}}
+.dsg .p2{animation:dp2 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h2{animation:dh2 9s linear infinite}
+@keyframes dp3{0%,25%{stroke-dashoffset:1;fill-opacity:0}33%{stroke-dashoffset:0;fill-opacity:0}58%{stroke-dashoffset:0;fill-opacity:0}63%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh3{0%,33%{opacity:0}34%,58%{opacity:1}63%,100%{opacity:0}}
+.dsg .p3{animation:dp3 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h3{animation:dh3 9s linear infinite}
+@keyframes dp4{0%,28%{stroke-dashoffset:1;fill-opacity:0}36%{stroke-dashoffset:0;fill-opacity:0}60%{stroke-dashoffset:0;fill-opacity:0}65%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh4{0%,36%{opacity:0}37%,60%{opacity:1}65%,100%{opacity:0}}
+.dsg .p4{animation:dp4 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h4{animation:dh4 9s linear infinite}
+@keyframes dp5{0%,31%{stroke-dashoffset:1;fill-opacity:0}39%{stroke-dashoffset:0;fill-opacity:0}62%{stroke-dashoffset:0;fill-opacity:0}67%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh5{0%,39%{opacity:0}40%,62%{opacity:1}67%,100%{opacity:0}}
+.dsg .p5{animation:dp5 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h5{animation:dh5 9s linear infinite}
+@keyframes dp6{0%,34%{stroke-dashoffset:1;fill-opacity:0}42%{stroke-dashoffset:0;fill-opacity:0}64%{stroke-dashoffset:0;fill-opacity:0}69%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh6{0%,42%{opacity:0}43%,64%{opacity:1}69%,100%{opacity:0}}
+.dsg .p6{animation:dp6 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h6{animation:dh6 9s linear infinite}
+@keyframes dp7{0%,37%{stroke-dashoffset:1;fill-opacity:0}45%{stroke-dashoffset:0;fill-opacity:0}66%{stroke-dashoffset:0;fill-opacity:0}71%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh7{0%,45%{opacity:0}46%,66%{opacity:1}71%,100%{opacity:0}}
+.dsg .p7{animation:dp7 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h7{animation:dh7 9s linear infinite}
+@keyframes dp8{0%,40%{stroke-dashoffset:1;fill-opacity:0}48%{stroke-dashoffset:0;fill-opacity:0}68%{stroke-dashoffset:0;fill-opacity:0}73%,100%{stroke-dashoffset:0;fill-opacity:1}}
+@keyframes dh8{0%,48%{opacity:0}49%,68%{opacity:1}73%,100%{opacity:0}}
+.dsg .p8{animation:dp8 9s cubic-bezier(.3,.7,.2,1) infinite}.dsg .h8{animation:dh8 9s linear infinite}
+/* small touches */
+.steps{counter-reset:st}
+.steps li h3::before{counter-increment:st;content:"0" counter(st);display:block;margin-bottom:.45rem;font:500 .8rem/1 var(--m);letter-spacing:.08em;color:var(--acc)}
+.mq span:nth-child(even){animation:mqs 7s linear infinite}
+@keyframes mqs{to{transform:rotate(360deg)}}
+.vs div:last-child li::before{content:"✦";margin-right:.6rem;color:#ff86ad}
+.qh .av{transition:transform .5s var(--e)}
+@media(hover:hover){
+.mq:hover div{animation-play-state:paused}
+.mq span:nth-child(odd){transition:color .25s}
+.mq span:nth-child(odd):hover{color:var(--acc)}
+.row b{transition:background .3s,color .3s,border-color .3s}
+.row:hover b{background:var(--acc);color:var(--ink);border-color:transparent}
+.quote:hover .av{transform:rotate(-10deg) scale(1.1)}
+h2 em{transition:color .3s}
+h2 em:hover{color:var(--acc)}
+}
+@media (prefers-reduced-motion:reduce){.mq span:nth-child(even){animation:none}}
+html.fl body{opacity:0}
+html.fl *,html.fl *::before,html.fl *::after{animation-play-state:paused!important}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["ProfessionalService"],"@id":"https://cread.studio/#org","name":"Cread","url":"https://cread.studio/","logo":"https://cread.studio/icon-512.png","image":"https://cread.studio/og-image.png","email":"hello@cread.studio","description":"Cread — веб-студия из двух специалистов: дизайнер и верстальщик. Название, логотип и фирменный стиль, дизайн сайта, вёрстка и запуск под ключ.","slogan":"Дизайнер придумывает. Верстальщик строит.","knowsLanguage":"ru","knowsAbout":["разработка сайтов","дизайн сайтов","вёрстка сайтов","логотип и фирменный стиль","нейминг","лендинг"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Лендинг под ключ","description":"Одна страница, дизайн и вёрстка, запуск. Срок 2–3 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":90000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Сайт с нуля","description":"До восьми страниц, логотип и стиль, анимации. Месяц поддержки после запуска. Срок 4–6 недель."},"priceSpecification":{"@type":"PriceSpecification","minPrice":220000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Вёрстка сайта по макету","description":"Превращаем готовый макет в страницу. Срок 1–2 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":60000,"priceCurrency":"RUB"}}]},{"@type":"WebSite","@id":"https://cread.studio/#website","url":"https://cread.studio/","name":"Cread","inLanguage":"ru","publisher":{"@id":"https://cread.studio/#org"}},{"@type":"WebPage","@id":"https://cread.studio/#webpage","url":"https://cread.studio/","name":"Cread — веб-студия: дизайн и вёрстка сайтов под ключ","isPartOf":{"@id":"https://cread.studio/#website"},"about":{"@id":"https://cread.studio/#org"},"inLanguage":"ru"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно заказать только дизайн или только вёрстку?","acceptedAnswer":{"@type":"Answer","text":"Можно. Работаем и с чужими макетами, и с проектами, где нужен только дизайн."}},{"@type":"Question","name":"Как платить?","acceptedAnswer":{"@type":"Answer","text":"Половина перед началом, вторая половина после того, как вы приняли результат. Всё записываем в договор."}},{"@type":"Question","name":"Что вы отдаёте после запуска?","acceptedAnswer":{"@type":"Answer","text":"Исходники, доступы и короткую памятку, как менять тексты и картинки самому."}},{"@type":"Question","name":"Сколько будет правок?","acceptedAnswer":{"@type":"Answer","text":"Каждый этап согласуем до следующего, поэтому обычно хватает одной. Если нужно больше, договоримся отдельно."}}]}]}</script>
 </head>
@@ -413,12 +474,12 @@ nav::after{bottom:2px}
     <svg class="" viewBox="-2 0 187 217" aria-hidden="true"><g fill="#fff"><circle cx="80" cy="82" r="80"/><path d="M23 128V215H123V177H163V137L183 129L155 52L80 82Z"/></g><g class="fl8" fill="#ec477e"><circle cx="80" cy="82" r="46"/><circle cx="88.9" cy="37.9" r="21"/><circle cx="117.5" cy="57.1" r="21"/><circle cx="124.1" cy="90.9" r="21"/><circle cx="104.9" cy="119.5" r="21"/><circle cx="71.1" cy="126.1" r="21"/><circle cx="42.5" cy="106.9" r="21"/><circle cx="35.9" cy="73.1" r="21"/><circle cx="55.1" cy="44.5" r="21"/></g></svg>Cread
   </a>
   <span class="sp"></span>
-  <a class="l" href="about.html">О нас</a><a class="l" href="#duo">Двое</a><a class="l" href="#process">Процесс</a><a class="l" href="#services">Услуги</a><a class="l" href="#works">Работы</a><a class="l" href="#pricing">Цены</a><a class="l" href="#faq">Вопросы</a>
+  <a class="l" href="about.html">О нас</a><a class="l" href="#duo">Двое</a><a class="l" href="#process">Процесс</a><a class="l" href="#works">Работы</a><a class="l" href="#pricing">Цены</a><a class="l" href="#faq">Вопросы</a>
   <a class="btn" href="#talk">Обсудить<span class="d"> проект</span></a>
   <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
 </nav>
 <div class="menu" id="menu" aria-hidden="true">
-  <a class="m" href="about.html">О нас</a><a class="m" href="#duo">Двое</a><a class="m" href="#process">Процесс</a><a class="m" href="#services">Услуги</a><a class="m" href="#works">Работы</a><a class="m" href="#pricing">Цены</a><a class="m" href="#faq">Вопросы</a>
+  <a class="m" href="about.html">О нас</a><a class="m" href="#duo">Двое</a><a class="m" href="#process">Процесс</a><a class="m" href="#works">Работы</a><a class="m" href="#pricing">Цены</a><a class="m" href="#faq">Вопросы</a>
   <a class="btn" href="#talk">Обсудить проект</a>
 </div>
 <button class="up" aria-label="Наверх">↑</button>
@@ -444,13 +505,24 @@ nav::after{bottom:2px}
   <div class="wrap">
     <div class="duo-h">
       <h2>Два человека. Один <em>сайт</em>.</h2>
-      <p style="color:var(--mut)"><span class="hov">Наведите на карточку, чтобы увидеть, чем занят каждый. </span><span class="tap">Вот чем занят каждый. </span>Они сидят рядом и договариваются за минуты, а не за недели.</p>
+      <p style="color:var(--mut)">Вот чем занят каждый. Они сидят рядом и договариваются за минуты, а не за недели.</p>
     </div>
     <div class="duo-wrap">
       <div class="duo">
         <article class="panel p1" tabindex="0">
-          <div class="shapes" aria-hidden="true"><b></b><b></b><b></b></div>
           <h3>Дизайнер</h3>
+          <svg class="dsg" viewBox="0 0 352 150" aria-hidden="true">
+            <g class="lg">
+              <line class="gl g1" pathLength="1" x1="8" y1="75" x2="344" y2="75"/>
+              <line class="gl g2" pathLength="1" x1="176" y1="1" x2="176" y2="149"/>
+              <g transform="translate(112 9.4) scale(.8)">
+                <circle class="gl g3" pathLength="1" cx="80" cy="82" r="80"/>
+                <g class="fl"><circle class="pt p0" pathLength="1" cx="80" cy="82" r="46"/><circle class="pt p1" pathLength="1" cx="88.9" cy="37.9" r="21"/><circle class="pt p2" pathLength="1" cx="117.5" cy="57.1" r="21"/><circle class="pt p3" pathLength="1" cx="124.1" cy="90.9" r="21"/><circle class="pt p4" pathLength="1" cx="104.9" cy="119.5" r="21"/><circle class="pt p5" pathLength="1" cx="71.1" cy="126.1" r="21"/><circle class="pt p6" pathLength="1" cx="42.5" cy="106.9" r="21"/><circle class="pt p7" pathLength="1" cx="35.9" cy="73.1" r="21"/><circle class="pt p8" pathLength="1" cx="55.1" cy="44.5" r="21"/></g>
+                <rect class="hd h0" x="75.5" y="77.5" width="9" height="9" rx="1.5"/><rect class="hd h1" x="84.4" y="33.4" width="9" height="9" rx="1.5"/><rect class="hd h2" x="113.0" y="52.6" width="9" height="9" rx="1.5"/><rect class="hd h3" x="119.6" y="86.4" width="9" height="9" rx="1.5"/><rect class="hd h4" x="100.4" y="115.0" width="9" height="9" rx="1.5"/><rect class="hd h5" x="66.6" y="121.6" width="9" height="9" rx="1.5"/><rect class="hd h6" x="38.0" y="102.4" width="9" height="9" rx="1.5"/><rect class="hd h7" x="31.4" y="68.6" width="9" height="9" rx="1.5"/><rect class="hd h8" x="50.6" y="40.0" width="9" height="9" rx="1.5"/>
+              </g>
+              <g class="tg"><rect x="236" y="104" width="58" height="18" rx="9"/><text x="265" y="116" text-anchor="middle">#EC477E</text></g>
+            </g>
+          </svg>
           <div>
             <p>Находит идею и превращает её в узнаваемый образ.</p>
             <ul><li>Придумывает название</li><li>Рисует логотип и фирменный стиль</li><li>Проектирует структуру и экраны</li><li>Делает макеты и описывает анимации</li></ul>
@@ -481,30 +553,19 @@ nav::after{bottom:2px}
     <ol class="steps" id="steps">
       <li><h3>Название и идея</h3><p>Дизайнер изучает бизнес, предлагает несколько названий и выбирает вместе с вами то, что запоминается.</p><span class="who">Дизайнер</span></li>
       <li><h3>Логотип и стиль</h3><p>Цвета, шрифты, знак и правила их использования. Всё, из чего потом растёт сайт.</p><span class="who">Дизайнер</span></li>
-      <li><h3>Дизайн сайта</h3><p>Структура, макеты экранов и описание движения. Верстальщик подключается здесь и сразу говорит, что реально сделать красиво и быстро.</p><span class="who">Оба</span></li>
-      <li><h3>Вёрстка и запуск</h3><p>Код, анимации, проверка на разных устройствах. Дизайнер принимает результат и сверяет с макетом.</p><span class="who dv">Верстальщик</span></li>
+      <li><h3>Дизайн сайта</h3><p>Структура, макеты для компьютера и телефона, заметки о том, что и как должно двигаться. Верстальщик подключается здесь и сразу говорит, что реально сделать красиво и быстро.</p><span class="who">Оба</span></li>
+      <li><h3>Вёрстка и запуск</h3><p>Код пишем руками, без конструкторов: страница быстро открывается и не разваливается на старых телефонах. Проверяем на настоящих устройствах, подключаем домен и хостинг. Дизайнер принимает результат и сверяет с макетом. После релиза отвечаем, если что-то пошло не так.</p><span class="who dv">Верстальщик</span></li>
     </ol>
-  </div>
-</section>
-
-<section id="services">
-  <div class="wrap">
-    <h2>Чем <em>занимаемся</em></h2>
-    <div class="rows">
-      <div class="row"><h3>Название</h3><p>Если имени ещё нет или оно не нравится. Предложим несколько и объясним каждое.</p></div>
-      <div class="row"><h3>Логотип и стиль</h3><p>Знак, цвета, шрифты и короткая инструкция, как всем этим пользоваться.</p></div>
-      <div class="row"><h3>Дизайн сайта</h3><p>Структура, макеты для компьютера и телефона, заметки о том, что и как должно двигаться.</p></div>
-      <div class="row"><h3>Вёрстка</h3><p>Код пишем руками, без конструкторов. Страница быстро открывается и не разваливается на старых телефонах.</p></div>
-      <div class="row"><h3>Запуск</h3><p>Домен, хостинг, проверка на настоящих устройствах. После релиза отвечаем, если что-то пошло не так.</p></div>
-    </div>
   </div>
 </section>
 
 <section class="works" id="works"><div class="pin">
   <div class="wrap"><h2>Что получается, когда двое работают <em>вместе</em></h2></div>
   <div class="rail" id="rail">
-    <a class="work w1 real" href="https://fsduyx.github.io/techno/index.html" target="_blank" rel="noopener" aria-label="Технобокс — магазин техники в Симферополе: открыть сайт" title="Сайт магазина «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag">Сайт магазина</small></a>
-    <a class="work gran real" href="https://fsduyx.github.io/gran/index.html" target="_blank" rel="noopener" aria-label="Грань — сайт архитектурного бюро: открыть" title="Сайт архитектурного бюро «Грань» (демо-проект)"><div class="art"><img onerror="this.remove()" src="gran-1200.webp" srcset="gran-640.webp 640w, gran-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт архитектурного бюро «Грань» — демонстрационный проект Cread"></div><small class="tag">Сайт бюро</small></a>
+    <a class="work w1 real" href="https://fsduyx.github.io/techno/tradein.html" target="_blank" rel="noopener" aria-label="Технобокс — магазин техники в Симферополе: открыть сайт" title="Сайт магазина «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag">Сайт магазина</small></a>
+    <article class="work w2"><div class="art"></div><small>Финтех-сервис</small><h3>Орбита</h3></article>
+    <article class="work w3"><div class="art"></div><small>Бюро архитекторов</small><h3>Грань</h3></article>
+    <article class="work w4"><div class="art"></div><small>Интернет-магазин</small><h3>Лупа</h3></article>
   </div>
   <div class="wrap"><div class="rail-ctl"><button class="rbtn" data-d="-1" aria-label="Назад">←</button><button class="rbtn" data-d="1" aria-label="Вперёд">→</button><div class="bar"><i></i></div></div></div>
 </div></section>
@@ -527,6 +588,17 @@ nav::after{bottom:2px}
       <div><h3>Верстальщик</h3><p>Смотрит на макет, пока он ещё не готов, и сразу говорит, что получится быстро, а что лучше упростить. Сайт собирает вручную и проверяет на живых телефонах.</p></div>
     </div>
     <a class="btn more" href="about.html">Познакомиться с нами <span>→</span></a>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:2rem">
+  <div class="wrap">
+    <h2>Что говорят <em>клиенты</em></h2>
+    <div class="qs">
+      <figure class="quote"><figcaption class="qh"><span class="av" style="--c:#ee7a3c" aria-hidden="true">А</span><span><b>Анна</b><small>основательница кофейни «Мята»</small></span></figcaption><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Показали три названия и объяснили каждое. Выбрали за один созвон, а через месяц кофейня уже работала с новым сайтом.</p></figure>
+      <figure class="quote"><figcaption class="qh"><span class="av" style="--c:#4caf7d" aria-hidden="true">И</span><span><b>Игорь</b><small>продакт-менеджер «Орбиты»</small></span></figcaption><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Макет и сайт совпали до пикселя. У прошлых подрядчиков мы с этим мучились месяцами.</p></figure>
+      <figure class="quote"><figcaption class="qh"><span class="av" style="--c:#ec477e" aria-hidden="true">М</span><span><b>Мария</b><small>партнёр бюро «Грань»</small></span></figcaption><div class="st" role="img" aria-label="Оценка 5 из 5">★★★★★</div><p>Одна правка вместо трёх, как и обещали. И ни одного менеджера между нами.</p></figure>
+    </div>
   </div>
 </section>
 
@@ -562,7 +634,7 @@ nav::after{bottom:2px}
     <h2>Расскажите, что будем <em>строить</em></h2>
     <a class="btn mg" href="mailto:hello@cread.studio">Написать нам</a>
     <a class="mail" href="mailto:hello@cread.studio">hello@cread.studio</a>
-    <div class="fl"><a href="about.html">О нас</a><a href="#duo">Двое</a><a href="#process">Процесс</a><a href="#services">Чем занимаемся</a><a href="#works">Работы</a><a href="#pricing">Цены</a><a href="#faq">Вопросы</a></div>
+    <div class="fl"><a href="about.html">О нас</a><a href="#duo">Двое</a><a href="#process">Процесс</a><a href="#works">Работы</a><a href="#pricing">Цены</a><a href="#faq">Вопросы</a></div>
     <footer><span>Cread — веб-студия: дизайнер и верстальщик</span><span>© 2026 Cread</span></footer>
   </div>
 </div>
@@ -637,7 +709,7 @@ nav::after{bottom:2px}
   addEventListener('scroll',sp,{passive:true});addEventListener('resize',sp);sp();
   if(rm||!('IntersectionObserver' in window))return;
   root.classList.add('js');
-  var sel='.sub,.duo-h>p,.panel,.work,.quote,.row,.two>div,.faq details,.vs>div,.cta .btn,.cta .mail';
+  var sel='.work,.cta .btn,.cta .mail';
   var io=new IntersectionObserver(function(es){
     es.filter(function(e){return e.isIntersecting}).forEach(function(e,i){
       var el=e.target;io.unobserve(el);el.style.setProperty('--d',i*90+'ms');el.classList.add('in');
@@ -739,6 +811,47 @@ nav::after{bottom:2px}
   m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
   addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
   addEventListener('resize',function(){if(getComputedStyle(b).display==='none')set(false)});
+})();
+</script>
+<script>
+(function(){
+  var t=document.title;
+  document.addEventListener('visibilitychange',function(){document.title=document.hidden?'Вернитесь, мы ещё не договорили ✦':t});
+  try{console.log('%c Cread ','background:#1500f4;color:#fff;font:700 13px monospace;padding:3px 8px;border-radius:99px','\nЗаглянули в код? Мы тоже любим читать чужую вёрстку.\nhello@cread.studio')}catch(e){}
+})();
+</script>
+<script>
+/* Эффект «код печатается»: блок .panel.p2 pre */
+(function(){
+  var pre=document.querySelector('.panel.p2 pre');
+  if(!pre||matchMedia('(prefers-reduced-motion:reduce)').matches||!('IntersectionObserver' in window))return;
+  var LOOP=true;            /* true — после паузы стираем и печатаем заново; false — печатаем один раз */
+  var nodes=[],full=[];
+  (function w(p){[].slice.call(p.childNodes).forEach(function(c){
+    if(c.nodeType===3){nodes.push(c);full.push(c.nodeValue)}else if(c.nodeType===1)w(c)})})(pre);
+  var str=full.join(''),total=str.length,n=0,dir=1,vis=false,timer=0;
+  function show(k){var left=k;nodes.forEach(function(t,i){var s=full[i];t.nodeValue=s.slice(0,Math.max(0,Math.min(s.length,left)));left-=s.length})}
+  /* высота блока фиксируется по полному тексту, чтобы карточка не прыгала во время набора */
+  function fix(){pre.style.minHeight='';var cur=n;show(total);pre.style.minHeight=pre.offsetHeight+'px';show(cur)}
+  fix();show(0);
+  addEventListener('resize',fix);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fix);
+  function tick(){
+    clearTimeout(timer);if(!vis)return;
+    if(dir>0){
+      if(n<total){
+        n++;show(n);var ch=str.charAt(n-1);
+        timer=setTimeout(tick,ch==='\n'?280:ch===' '?28:28+Math.random()*50);
+      }else if(LOOP){dir=-1;timer=setTimeout(tick,4000)}
+    }else{
+      if(n>0){n=Math.max(0,n-4);show(n);timer=setTimeout(tick,14)}
+      else{dir=1;timer=setTimeout(tick,700)}
+    }
+  }
+  new IntersectionObserver(function(es){es.forEach(function(e){
+    vis=e.isIntersecting;
+    if(vis){clearTimeout(timer);timer=setTimeout(tick,n?0:500)}
+  })},{threshold:.4}).observe(pre);
 })();
 </script>
 </body>
