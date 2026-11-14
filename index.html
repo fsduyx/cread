@@ -25,12 +25,12 @@
 (function(){
   var r=document.documentElement;
   if(!document.fonts||!document.fonts.load)return;
-  var seen=0;try{seen=sessionStorage.getItem('pl');sessionStorage.setItem('pl','1')}catch(e){}
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches)seen=1;
-  r.classList.add('ld');if(seen)r.classList.add('np');
+  var seen=0,ta=0;try{seen=sessionStorage.getItem('pl');sessionStorage.setItem('pl','1');ta=sessionStorage.getItem('pt');sessionStorage.removeItem('pt')}catch(e){}
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){seen=1;ta=0}
+  r.classList.add('ld');if(ta)r.classList.add('ta');else if(seen)r.classList.add('np');
   var T='Aa Яя 0 ₽ № «»',t0=Date.now(),fin=0,t=setTimeout(done,2500);
   function done(){clearTimeout(t);if(fin)return;fin=1;
-    setTimeout(function(){r.classList.add('po');setTimeout(function(){r.classList.remove('ld','po','np')},650)},seen?0:Math.max(0,1300-(Date.now()-t0)))}
+    setTimeout(function(){r.classList.add('po');setTimeout(function(){r.classList.remove('ld','po','np','ta')},650)},(seen||ta)?0:Math.max(0,1300-(Date.now()-t0)))}
   Promise.all(['900 1em Unbounded','700 1em Unbounded','500 1em Unbounded','400 1em Onest','500 1em Onest','600 1em Onest','italic 500 1em "Playfair Display"','500 1em "JetBrains Mono"'].map(function(f){return document.fonts.load(f,T)})).then(done,done);
 })();
 </script>
@@ -468,6 +468,13 @@ html.ld #pl,html.ld #pl *{animation-play-state:running!important}
 @keyframes plp{from{opacity:0;transform:translate(calc(var(--x)*3.2),calc(var(--y)*3.2)) scale(.05)}to{opacity:1;transform:none}}
 @keyframes plc{from{opacity:0;transform:scale(.05)}to{opacity:1;transform:none}}
 @keyframes plspin{to{transform:rotate(360deg)}}
+/* page transition: flower assembles, then next page opens with it */
+html.to #pl{display:grid;animation:plin .25s ease backwards}
+@keyframes plin{from{opacity:0}}
+html.to #pl svg,html.ta #pl svg{animation:none}
+html.to #pl .pp{animation-duration:.4s;animation-delay:calc(var(--i)*22ms)}
+html.to #pl .pc{animation-duration:.35s;animation-delay:.15s}
+html.ta #pl .pp,html.ta #pl .pc{animation:none}
 
 /* works: pinned section, vertical scroll pans the rail sideways */
 .works.stk{height:calc(100svh + var(--d,0px))}
@@ -777,8 +784,11 @@ html.ld #pl,html.ld #pl *{animation-play-state:running!important}
     var a=e.target.closest('a[href]');if(!a||a.target||e.metaKey||e.ctrlKey||e.shiftKey||e.defaultPrevented)return;
     var u=new URL(a.href,location.href);
     if(u.origin!==location.origin||u.pathname===location.pathname||!/\.html?$/.test(u.pathname))return;
-    e.preventDefault();document.body.classList.add('out');setTimeout(function(){location.href=a.href},380)});
-  addEventListener('pageshow',function(e){if(e.persisted)document.body.classList.remove('out')});
+    e.preventDefault();var R=document.documentElement;if(R.classList.contains('to'))return;
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.body.classList.add('out');setTimeout(function(){location.href=a.href},380);return}
+    try{sessionStorage.setItem('pt','1')}catch(x){}
+    R.classList.add('to');setTimeout(function(){location.href=a.href},600)});
+  addEventListener('pageshow',function(e){if(e.persisted){document.documentElement.classList.remove('to');document.body.classList.remove('out');try{sessionStorage.removeItem('pt')}catch(x){}}});
 })();
 (function(){
   var up=document.querySelector('.up');
