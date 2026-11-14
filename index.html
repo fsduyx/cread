@@ -461,6 +461,21 @@ h2 em:hover{color:var(--acc)}
 @media (prefers-reduced-motion:reduce){.mq span:nth-child(even){animation:none}}
 html.fl body{opacity:0}
 html.fl *,html.fl *::before,html.fl *::after{animation-play-state:paused!important}
+
+/* works: pinned section, vertical scroll pans the rail sideways */
+.works.stk{height:calc(100svh + var(--d,0px))}
+.works.stk .pin>.wrap{width:100%}
+.rail.stk .work.real{flex:0 0 auto;width:auto;height:clamp(240px,min(calc(100svh - 340px),calc(100vw*.9)),780px);aspect-ratio:1200/630;align-self:flex-start}
+@media(max-width:700px){
+.works.stk .work.real .tag,.works.stk .work.real::after{display:none}
+.works:not(.stk) .rail-ctl{display:none}
+.rail:not(.stk){flex-direction:column;overflow:visible;scroll-snap-type:none;gap:1rem;padding:1.6rem max(.8rem,env(safe-area-inset-left,0px)) 1rem}
+.rail:not(.stk) .work.real{flex:none;width:100%;align-self:stretch;aspect-ratio:auto;height:clamp(280px,50svh,540px)}
+.rail:not(.stk) .work.real .art{overflow:hidden;background:#0b0b0d}
+.rail:not(.stk) .work.real .art::before{content:"";position:absolute;inset:-12%;background:var(--im) center/cover no-repeat;filter:blur(22px) saturate(1.15);opacity:.9}
+.rail:not(.stk) .work.real .art img{position:absolute;left:0;top:50%;width:100%;height:auto;transform:translateY(-50%);object-fit:contain;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
+.rail:not(.stk) .work.real .tag,.rail:not(.stk) .work.real::after{display:none}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["ProfessionalService"],"@id":"https://cread.studio/#org","name":"Cread","url":"https://cread.studio/","logo":"https://cread.studio/icon-512.png","image":"https://cread.studio/og-image.png","email":"hello@cread.studio","description":"Cread — веб-студия из двух специалистов: дизайнер и верстальщик. Название, логотип и фирменный стиль, дизайн сайта, вёрстка и запуск под ключ.","slogan":"Дизайнер придумывает. Верстальщик строит.","knowsLanguage":"ru","knowsAbout":["разработка сайтов","дизайн сайтов","вёрстка сайтов","логотип и фирменный стиль","нейминг","лендинг"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Лендинг под ключ","description":"Одна страница, дизайн и вёрстка, запуск. Срок 2–3 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":90000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Сайт с нуля","description":"До восьми страниц, логотип и стиль, анимации. Месяц поддержки после запуска. Срок 4–6 недель."},"priceSpecification":{"@type":"PriceSpecification","minPrice":220000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Вёрстка сайта по макету","description":"Превращаем готовый макет в страницу. Срок 1–2 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":60000,"priceCurrency":"RUB"}}]},{"@type":"WebSite","@id":"https://cread.studio/#website","url":"https://cread.studio/","name":"Cread","inLanguage":"ru","publisher":{"@id":"https://cread.studio/#org"}},{"@type":"WebPage","@id":"https://cread.studio/#webpage","url":"https://cread.studio/","name":"Cread — веб-студия: дизайн и вёрстка сайтов под ключ","isPartOf":{"@id":"https://cread.studio/#website"},"about":{"@id":"https://cread.studio/#org"},"inLanguage":"ru"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно заказать только дизайн или только вёрстку?","acceptedAnswer":{"@type":"Answer","text":"Можно. Работаем и с чужими макетами, и с проектами, где нужен только дизайн."}},{"@type":"Question","name":"Как платить?","acceptedAnswer":{"@type":"Answer","text":"Половина перед началом, вторая половина после того, как вы приняли результат. Всё записываем в договор."}},{"@type":"Question","name":"Что вы отдаёте после запуска?","acceptedAnswer":{"@type":"Answer","text":"Исходники, доступы и короткую памятку, как менять тексты и картинки самому."}},{"@type":"Question","name":"Сколько будет правок?","acceptedAnswer":{"@type":"Answer","text":"Каждый этап согласуем до следующего, поэтому обычно хватает одной. Если нужно больше, договоримся отдельно."}}]}]}</script>
 </head>
@@ -563,8 +578,8 @@ html.fl *,html.fl *::before,html.fl *::after{animation-play-state:paused!importa
 <section class="works" id="works"><div class="pin">
   <div class="wrap"><h2>Что получается, когда двое работают <em>вместе</em></h2></div>
   <div class="rail" id="rail">
-    <a class="work w1 real" href="https://fsduyx.github.io/techno/tradein.html" target="_blank" rel="noopener" aria-label="Технобокс — магазин техники в Симферополе: открыть сайт" title="Сайт магазина «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag">Сайт магазина</small></a>
-    <a class="work w3 real" href="https://fsduyx.github.io/gran/" target="_blank" rel="noopener" aria-label="Грань — сайт бюро архитекторов: открыть сайт" title="Сайт бюро «Грань»"><div class="art"><img onerror="this.remove()" src="gran-1200.webp" srcset="gran-640.webp 640w, gran-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт бюро архитекторов «Грань» — пример работы Cread"></div><small class="tag">Сайт бюро архитекторов</small></a>
+    <a class="work w1 real" style="--im:url(technobox-640.webp)" href="technobox.html" aria-label="Технобокс — сайт магазина техники в Симферополе: смотреть работу" title="Работа «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag">Технобокс · сайт магазина</small></a>
+    <a class="work w3 real" style="--im:url(gran-640.webp)" href="https://fsduyx.github.io/gran/" target="_blank" rel="noopener" aria-label="Грань — сайт бюро архитекторов: открыть сайт" title="Сайт бюро «Грань»"><div class="art"><img onerror="this.remove()" src="gran-1200.webp" srcset="gran-640.webp 640w, gran-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт бюро архитекторов «Грань» — пример работы Cread"></div><small class="tag">Грань · сайт бюро архитекторов</small></a>
   </div>
   <div class="wrap"><div class="rail-ctl"><button class="rbtn" data-d="-1" aria-label="Назад">←</button><button class="rbtn" data-d="1" aria-label="Вперёд">→</button><div class="bar"><i></i></div></div></div>
 </div></section>
@@ -776,14 +791,15 @@ html.fl *,html.fl *::before,html.fl *::after{animation-play-state:paused!importa
 })();
 (function(){
   var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,root=document.documentElement;
-  var sec=document.getElementById('works'),rail=document.getElementById('rail'),d=0;
+  var sec=document.getElementById('works'),rail=document.getElementById('rail'),pin=sec.querySelector('.pin'),d=0;
   function pr(){if(!sec.classList.contains('stk'))return;
-    var r=sec.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/(sec.offsetHeight-innerHeight)));rail.scrollLeft=p*d}
+    var r=sec.getBoundingClientRect(),h=sec.offsetHeight-pin.offsetHeight,p=h>0?Math.max(0,Math.min(1,-r.top/h)):0;rail.scrollLeft=p*d}
   function lay(){
-    var ok=!rm&&matchMedia('(pointer:fine)').matches&&innerWidth>=900&&innerHeight>=840;
-    sec.classList.remove('stk');rail.classList.remove('stk');sec.style.height='';rail.scrollLeft=0;
-    if(ok){rail.classList.add('stk');d=rail.scrollWidth-rail.clientWidth;
-      if(d>40){sec.classList.add('stk');sec.style.height=(innerHeight+d)+'px'}else rail.classList.remove('stk')}
+    if(rm||innerHeight<500){sec.classList.remove('stk');rail.classList.remove('stk');sec.style.removeProperty('--d');rail.scrollLeft=0;d=0;return}
+    rail.classList.add('stk');
+    var w=rail.scrollWidth-rail.clientWidth;
+    if(w>40){d=w;sec.classList.add('stk');sec.style.setProperty('--d',Math.round(w*.85)+'px')}
+    else{d=0;sec.classList.remove('stk');rail.classList.remove('stk');sec.style.removeProperty('--d');rail.scrollLeft=0}
     pr()}
   rail.parentNode.addEventListener('pointerdown',function(e){if(rail.classList.contains('stk'))e.stopPropagation()},true);
   addEventListener('scroll',pr,{passive:true});addEventListener('resize',lay);addEventListener('load',lay);lay();
