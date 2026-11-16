@@ -3,44 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cread — веб-студия: дизайн и вёрстка сайтов под ключ</title>
-<meta name="description" content="Cread — веб-студия из двух человек: дизайнер и верстальщик. Название, логотип, дизайн сайта, вёрстка и запуск под ключ. Лендинг от 30 000 ₽, сайт с нуля от 80 000 ₽.">
+<title>Cread — веб-студия: дизайн, разработка и оптимизация сайтов под ключ</title>
+<meta name="description" content="Cread — веб-студия: дизайн, разработка и оптимизация сайтов. Название, логотип, дизайн сайта, разработка и запуск под ключ. Лендинг от 30 000 ₽, сайт с нуля от 80 000 ₽.">
 <link rel="canonical" href="https://cread.studio/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="author" content="Cread">
 <meta name="theme-color" content="#1500f4">
 <meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Cread"><meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="Cread — веб-студия: дизайн и вёрстка сайтов под ключ"><meta property="og:description" content="Название, логотип, дизайн и вёрстка сайта под ключ. Без менеджеров между вами и теми, кто делает."><meta property="og:url" content="https://cread.studio/">
-<meta property="og:image" content="https://cread.studio/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Cread — веб-студия: дизайн и вёрстка сайтов">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Cread — веб-студия: дизайн и вёрстка сайтов под ключ"><meta name="twitter:description" content="Название, логотип, дизайн и вёрстка сайта под ключ. Без менеджеров между вами и теми, кто делает."><meta name="twitter:image" content="https://cread.studio/og-image.png">
+<meta property="og:title" content="Cread — веб-студия: дизайн, разработка и оптимизация сайтов под ключ"><meta property="og:description" content="Название, логотип, дизайн и разработка сайта под ключ. Без менеджеров между вами и теми, кто делает."><meta property="og:url" content="https://cread.studio/">
+<meta property="og:image" content="https://cread.studio/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Cread — веб-студия: дизайн и разработка сайтов">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Cread — веб-студия: дизайн, разработка и оптимизация сайтов под ключ"><meta name="twitter:description" content="Название, логотип, дизайн и разработка сайта под ключ. Без менеджеров между вами и теми, кто делает."><meta name="twitter:image" content="https://cread.studio/og-image.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Onest:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" href="NTSomic-Bold.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="NTSomic-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="NTSomic-Medium.otf" as="font" type="font/otf" crossorigin>
 <script>
 (function(){
   var r=document.documentElement;
   if(!document.fonts||!document.fonts.load)return;
   var seen=0,ta=0;try{seen=sessionStorage.getItem('pl');sessionStorage.setItem('pl','1');ta=sessionStorage.getItem('pt');sessionStorage.removeItem('pt')}catch(e){}
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches){seen=1;ta=0}
+  /* телефон / тач: без заставки со сборкой цветка — страница просто быстро проявляется */
+  var mob=matchMedia('(max-width:700px),(hover:none) and (pointer:coarse)').matches;
+  if(mob)r.classList.add('mob');
+  if(mob||matchMedia('(prefers-reduced-motion:reduce)').matches){seen=1;ta=0}
   r.classList.add('ld');if(ta)r.classList.add('ta');else if(seen)r.classList.add('np');
-  var T='Aa Яя 0 ₽ № «»',t0=Date.now(),fin=0,t=setTimeout(done,2500);
+  var T='Aa Яя 0 ₽ «»',t0=Date.now(),fin=0,t=setTimeout(done,2500);
   function done(){clearTimeout(t);if(fin)return;fin=1;
     setTimeout(function(){r.classList.add('po');setTimeout(function(){r.classList.remove('ld','po','np','ta')},650)},(seen||ta)?0:Math.max(0,1300-(Date.now()-t0)))}
-  Promise.all(['900 1em Unbounded','700 1em Unbounded','500 1em Unbounded','400 1em Onest','500 1em Onest','600 1em Onest','italic 500 1em "Playfair Display"','500 1em "JetBrains Mono"'].map(function(f){return document.fonts.load(f,T)})).then(done,done);
+  Promise.all(['700 1em NTSomic','500 1em NTSomic','400 1em NTSomic'].map(function(f){return document.fonts.load(f,T)})).then(done,done);
 })();
 </script>
 
 <style>
+@font-face{font-family:'NTSomic';src:url('NTSomic-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'NTSomic';src:url('NTSomic-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'NTSomic';src:url('NTSomic-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
-.skip{position:absolute;left:-9999px;top:0;z-index:200;background:#fff;color:#0a0036;padding:.7rem 1.1rem;border-radius:99px;font:600 .95rem var(--b)}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:#fff;color:#0a0036;padding:.7rem 1.1rem;border-radius:99px;font:500 .95rem var(--b)}
 .skip:focus{left:1rem;top:1rem}
 :root{--bg:#eeecff;--fg:#0a0036;--mut:#524d8c;--card:#fff;--line:#0a003626;--blue:#1500f4;--dk:#1500f4;--acc:#ec477e;--lt:#ff86ad;--ink:#0a0036;color-scheme:light dark;
---d:'Unbounded','Arial Black',system-ui,sans-serif;--b:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+--d:'NTSomic',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--b:'NTSomic',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07002e;--fg:#ecebff;--mut:#a29ed6;--card:#10064a;--line:#ecebff26;--dk:#1500f4;--acc:#ff5f94}}
 :root[data-theme="dark"]{--bg:#07002e;--fg:#ecebff;--mut:#a29ed6;--card:#10064a;--line:#ecebff26;--dk:#1500f4;--acc:#ff5f94}
@@ -49,8 +55,8 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px);scroll-behavio
 body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 var(--b);overflow-x:hidden}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
-h1,h2,h3{font-family:var(--d);margin:0;line-height:1.02;letter-spacing:-.03em}
-h2{font-size:clamp(1.9rem,5vw,3.6rem);font-weight:700;max-width:18ch}
+h1,h2,h3{font-family:var(--d);font-weight:500;margin:0;line-height:1.02;letter-spacing:-.03em}
+h2{font-size:clamp(2rem,5.6vw,4rem);font-weight:700;max-width:18ch}
 p{margin:0;max-width:62ch}
 .wrap{padding:0 clamp(1.1rem,4vw,3rem);max-width:1400px;margin:0 auto}
 section{padding:clamp(4.5rem,11vw,9rem) 0}
@@ -63,7 +69,9 @@ nav .logo svg{height:24px;width:auto}
 nav .sp{flex:1}
 nav a.l{font-size:.95rem;text-decoration:none;opacity:.85;padding:.3rem .2rem}
 nav a.l:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;gap:.6rem;border:0;border-radius:999px;padding:.85rem 1.5rem;font:600 1rem var(--b);background:var(--acc);color:var(--ink);cursor:pointer;text-decoration:none;transition:transform .25s}
+.btn{display:inline-flex;align-items:center;gap:.6rem;border:0;border-radius:999px;padding:.85rem 1.5rem;font:500 1rem var(--b);background:var(--acc);color:var(--ink);cursor:pointer;text-decoration:none;transition:transform .25s}
+nav .btn,.menu .btn{background:#d6336c;color:#fff;font-weight:700;line-height:1;letter-spacing:.01em}
+nav .btn{gap:.28em;justify-content:center;white-space:nowrap}
 .ico{width:42px;height:42px;padding:0;justify-content:center;background:#ffffff26;color:#fff;font-size:1.1rem}
 @media(max-width:980px){nav a.l{display:none}}
 
@@ -72,26 +80,26 @@ nav a.l:hover{opacity:1}
 .hero-in{position:sticky;top:0;height:100svh;padding:calc(env(safe-area-inset-top,0px) + 6rem) 0 2rem;display:flex;flex-direction:column;justify-content:flex-end;overflow:clip}
 .hero-in::before{content:"";position:absolute;width:60vmax;height:60vmax;border-radius:50%;background:radial-gradient(circle,#4a3dff 0%,#1500f400 65%);left:calc(var(--mx,50%) - 30vmax);top:calc(var(--my,30%) - 30vmax);transition:left .6s ease-out,top .6s ease-out;pointer-events:none}
 .hero .wrap{position:relative;width:100%}
-.word{font-size:clamp(4rem,19.5vw,21rem);font-weight:900;letter-spacing:-.07em;line-height:.9;display:flex;margin:0;user-select:none}
+.word{font-size:clamp(4rem,min(30vw,40svh),24rem);font-weight:700;letter-spacing:-.045em;line-height:.9;display:flex;margin:0;user-select:none}
 .word .m{overflow:hidden;display:block;padding:.05em .02em .12em}
 .stage{display:flex;flex-direction:column;align-items:center;gap:clamp(.6rem,2.5vw,1.6rem)}
 .mark .ct{transform-box:fill-box;transform-origin:center;opacity:0}
 .word span.c{display:inline-block;transform:translateY(110%) rotate(8deg);animation:up 1.1s cubic-bezier(.2,.9,.2,1) forwards;animation-delay:calc(var(--i)*.09s + .2s);transition:transform .35s,color .3s}
 .word .m:hover span.c{transform:translateY(-6%) skewX(-8deg);color:var(--lt)}
 @keyframes up{to{transform:none}}
-.hint{position:absolute;left:clamp(1.1rem,4vw,3rem);top:calc(env(safe-area-inset-top,0px) + 5.4rem);font:500 .85rem var(--m,monospace);opacity:calc(1 - var(--p,0)*6);pointer-events:none;color:var(--lt)}
+.hint{position:absolute;left:clamp(1.1rem,4vw,3rem);top:calc(env(safe-area-inset-top,0px) + 5.4rem);font:400 .85rem var(--b);opacity:calc(1 - var(--p,0)*6);pointer-events:none;color:var(--lt)}
 @media (prefers-reduced-motion:reduce){.hero{height:auto;min-height:100svh}.hero-in{position:relative;height:auto;min-height:100svh}.hint{display:none}}
 .hero-row{display:flex;justify-content:space-between;gap:2rem;align-items:flex-end;flex-wrap:wrap;padding-bottom:1rem;border-bottom:1px solid #ffffff44;margin-bottom:1.2rem}
 .hero-row p{font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.4;max-width:34ch}
 .hero-meta{display:flex;gap:.6rem;flex-wrap:wrap;font-size:.95rem}
 .pill{border:1px solid #ffffff66;border-radius:999px;padding:.4rem 1rem}
-.pill b{font-weight:600;color:var(--lt)}
+.pill b{font-weight:500;color:var(--lt)}
 
 /* two nodes cursor */
 #th{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:99}
 #th line{stroke:var(--lt);stroke-width:2;stroke-dasharray:2 6;stroke-linecap:round}
 .node{position:fixed;left:0;top:0;z-index:100;pointer-events:none;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%}
-.node i{position:absolute;left:18px;top:-4px;font:500 .75rem var(--b);font-style:normal;white-space:nowrap;padding:.1rem .5rem;border-radius:99px;background:var(--bg);color:var(--fg)}
+.node i{position:absolute;left:18px;top:-4px;font:400 .75rem var(--b);font-style:normal;white-space:nowrap;padding:.1rem .5rem;border-radius:99px;background:var(--bg);color:var(--fg)}
 #n1{background:none}#n2{background:var(--fg);box-shadow:0 0 0 2px var(--bg)}
 @media(pointer:coarse){#th,.node{display:none}}
 
@@ -109,7 +117,7 @@ nav a.l:hover{opacity:1}
 .panel li{padding:.55rem 0;border-top:1px solid currentColor;border-color:color-mix(in srgb,currentColor 30%,transparent)}
 .p1{background:var(--card);color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
 .p2{background:var(--ink);color:#ecebff}
-pre{margin:0;font:500 .85rem/1.7 ui-monospace,'SF Mono',Menlo,Consolas,monospace;color:#a9a5ff;overflow:hidden;white-space:pre-wrap}
+pre{margin:0;font:400 .85rem/1.7 var(--b);color:#a9a5ff;overflow:hidden;white-space:pre-wrap}
 pre s{text-decoration:none;color:var(--acc)}pre u{text-decoration:none;color:#fff}
 pre::after{content:"";display:inline-block;width:8px;height:1em;background:var(--acc);vertical-align:-2px;margin-left:3px;animation:bl 1s steps(2) infinite}
 @keyframes bl{50%{opacity:0}}
@@ -126,9 +134,9 @@ pre::after{content:"";display:inline-block;width:8px;height:1em;background:var(-
 .steps li.on{opacity:1}
 .steps li::before{content:"";position:absolute;left:-2.2rem;top:.55rem;width:17px;height:17px;border-radius:50%;background:var(--bg);border:3px solid var(--line);transition:.4s}
 .steps li.on::before{background:var(--acc);border-color:var(--acc);transform:scale(1.15)}
-.steps h3{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700}
+.steps h3{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:500}
 .steps p{color:var(--mut)}
-.who{font-size:.85rem;font-weight:600;padding:.2rem .8rem;border-radius:99px;width:max-content;background:var(--dk);color:#fff}
+.who{font-size:.85rem;font-weight:500;padding:.2rem .8rem;border-radius:99px;width:max-content;background:var(--dk);color:#fff}
 .who.dv{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
 @media(min-width:900px){.steps li{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) 8.5rem;align-items:start;gap:2rem}.steps li .who{justify-self:end}}
 
@@ -136,7 +144,7 @@ pre::after{content:"";display:inline-block;width:8px;height:1em;background:var(-
 .works{padding-bottom:0}
 .rail{display:flex;gap:1.2rem;overflow-x:auto;padding:2.5rem clamp(1.1rem,4vw,3rem) 2rem;scroll-snap-type:x mandatory;scrollbar-width:thin}
 .work{flex:0 0 min(78vw,380px);aspect-ratio:3/4;border-radius:24px;scroll-snap-align:start;position:relative;overflow:hidden;color:#fff;padding:1.4rem;display:flex;flex-direction:column;justify-content:space-between;transform-style:preserve-3d;transition:transform .2s}
-.work h3{font-size:2rem}
+.work h3{font-size:2rem;font-weight:700}
 .work small{font-size:.9rem;opacity:.9}
 .art{position:absolute;inset:0;z-index:0}
 .art img{display:block;width:100%;height:100%;object-fit:cover}
@@ -162,14 +170,14 @@ pre::after{content:"";display:inline-block;width:8px;height:1em;background:var(-
 .row:hover{padding-left:.8rem}
 .row h3{font-size:clamp(1.3rem,2.4vw,1.9rem)}
 .row p{color:var(--mut)}
-.row b{font:600 1rem var(--b);white-space:nowrap}
+.row b{font:400 1rem var(--b);white-space:nowrap}
 @media(min-width:800px){.row{grid-template-columns:1fr 1.4fr auto;align-items:baseline}}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:2.5rem 4rem;margin-top:2.5rem}
 .two h3{font-size:1.2rem;margin-bottom:.8rem}
 .two p{color:var(--mut)}
 .faq{margin-top:3rem;max-width:860px;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
-.faq summary{cursor:pointer;font:600 1.1rem var(--b);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary{cursor:pointer;font:500 1.1rem var(--b);list-style:none;display:flex;justify-content:space-between;gap:1rem}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";font:700 1.4rem var(--d);color:var(--acc);transition:transform .3s}
 .faq details[open] summary::after{transform:rotate(45deg)}
@@ -200,18 +208,17 @@ nav::after{content:"";position:absolute;left:1.6rem;right:1.6rem;bottom:2px;heig
 .cta .wrap{position:relative}
 
 /* type */
-:root{--s:'Playfair Display',Georgia,'Times New Roman',serif;--m:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace}
-h2 em{font-family:var(--s);font-style:italic;font-weight:500;font-size:1.04em;letter-spacing:-.01em}
-.row b,.who,.pill,.node i,pre{font-family:var(--m)}
-.row b{font-size:.74rem;font-weight:500;padding:.28rem .75rem}
-.who{font-size:.78rem;font-weight:500}
+:root{--s:var(--b);--m:var(--b)}
+h2 em{font-style:normal;font-weight:inherit;font-size:1em;letter-spacing:inherit;color:var(--acc)}
+.row b{font-size:.78rem;font-weight:400;padding:.28rem .75rem}
+.who{font-size:.8rem;font-weight:500}
 .pill{font-size:.85rem}
 
 /* cta */
 .cta{background:var(--dk);color:#fff;text-align:center;border-radius:36px 36px 0 0;padding:clamp(4rem,10vw,8rem) 0 3rem;margin-top:clamp(3rem,8vw,6rem)}
 .cta h2{max-width:14ch;margin:0 auto 2.5rem;font-size:clamp(2.2rem,7vw,5.5rem)}
 .cta .btn{font-size:1.2rem;padding:1.3rem 2.4rem}
-.cta .mail{display:block;margin-top:1.6rem;font:500 1.1rem var(--b)}
+.cta .mail{display:block;margin-top:1.6rem;font:400 1.1rem var(--b)}
 footer{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:5rem;padding-top:1.4rem;border-top:1px solid #ffffff44;font-size:.9rem;opacity:.85;text-align:left}
 
 /* smooth+ */
@@ -274,7 +281,7 @@ body.out{opacity:0;transition:opacity .35s}
 .up:hover{background:var(--acc);color:var(--ink)}
 /* wow */
 .hero-row,.hint{animation-delay:.6s}
-.cur{position:fixed;left:0;top:0;z-index:101;pointer-events:none;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;background:var(--dk);color:#fff;display:grid;place-items:center;font:600 .7rem var(--b);text-align:center;opacity:0;scale:.2;transition:opacity .3s,scale .5s var(--e)}
+.cur{position:fixed;left:0;top:0;z-index:101;pointer-events:none;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;background:var(--dk);color:#fff;display:grid;place-items:center;font:500 .7rem var(--b);text-align:center;opacity:0;scale:.2;transition:opacity .3s,scale .5s var(--e)}
 body.cl .cur{opacity:1;scale:1}
 body.cl .node{opacity:0!important}
 @media(pointer:coarse){.cur{display:none}}
@@ -302,7 +309,7 @@ html.mn{overflow:hidden}
 .menu{position:fixed;inset:0;z-index:45;display:flex;flex-direction:column;overflow:auto;background:var(--dk);color:#fff;padding:calc(env(safe-area-inset-top,0px) + 5.6rem) clamp(1.3rem,6vw,2.5rem) calc(env(safe-area-inset-bottom,0px) + 1.6rem);clip-path:circle(0 at calc(100% - 2.6rem) 2.3rem);visibility:hidden;transition:clip-path .7s var(--e),visibility 0s .7s}
 html.mn .menu{clip-path:circle(150% at calc(100% - 2.6rem) 2.3rem);visibility:visible;transition:clip-path .7s var(--e),visibility 0s}
 .menu a.m{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid #ffffff26;font:700 clamp(1.5rem,6.5vw,2.2rem) var(--d);letter-spacing:-.03em;text-decoration:none;opacity:0;transform:translateY(18px);transition:opacity .4s,transform .5s var(--e)}
-.menu a.m::after{content:"→";font:500 1.2rem var(--b);opacity:.6}
+.menu a.m::after{content:"→";font:400 1.2rem var(--b);opacity:.6}
 html.mn .menu a.m{opacity:1;transform:none;transition:opacity .6s var(--e) calc(.2s + var(--i)*50ms),transform .7s var(--e) calc(.2s + var(--i)*50ms)}
 .menu a.m:nth-child(1){--i:0}.menu a.m:nth-child(2){--i:1}.menu a.m:nth-child(3){--i:2}.menu a.m:nth-child(4){--i:3}.menu a.m:nth-child(5){--i:4}.menu a.m:nth-child(6){--i:5}.menu a.m:nth-child(7){--i:6}.menu a.m:nth-child(8){--i:7}
 .menu .btn{margin-top:auto;justify-content:center;height:56px;font-size:1.05rem}
@@ -399,7 +406,7 @@ nav .logo{font-size:.95rem}
 .dsg .pt{stroke:var(--acc);stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:0;fill:var(--acc);fill-opacity:1}
 .dsg .hd{fill:#fff;stroke:var(--acc);stroke-width:1.5;opacity:0}
 .dsg .tg rect{fill:var(--acc)}
-.dsg .tg text{fill:var(--ink);font:500 10px var(--m)}
+.dsg .tg text{fill:var(--ink);font:400 10px var(--b)}
 .dsg .fl{transform-origin:80px 82px;transition:transform .9s var(--e)}
 @media(hover:hover){.p1:hover .dsg .fl{transform:rotate(45deg)}}
 .dsg .lg{animation:lf 9s linear infinite}
@@ -441,7 +448,7 @@ nav .logo{font-size:.95rem}
 /* small touches */
 .vs div:last-child li::before{content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:#ff86ad;margin-right:.75rem;vertical-align:middle;position:relative;top:-.08em}
 .steps{counter-reset:st}
-.steps li h3::before{counter-increment:st;content:"0" counter(st);display:block;margin-bottom:.45rem;font:500 .8rem/1 var(--m);letter-spacing:.08em;color:var(--acc)}
+.steps li h3::before{counter-increment:st;content:"0" counter(st);display:block;margin-bottom:.45rem;font:500 .8rem/1 var(--b);letter-spacing:.08em;color:var(--acc)}
 .mq span:nth-child(even){animation:mqs 7s linear infinite}
 @keyframes mqs{to{transform:rotate(360deg)}}
 @media(hover:hover){
@@ -461,7 +468,12 @@ html.ld:not(.po) *,html.ld:not(.po) *::before,html.ld:not(.po) *::after{animatio
 html.ld:not(.np) #pl{display:grid}
 html.po #pl{opacity:0;visibility:hidden}
 html.ld #pl,html.ld #pl *{animation-play-state:running!important}
-#pl svg{width:clamp(96px,16vw,150px);height:auto;overflow:visible;animation:plspin 3.6s linear 1.2s infinite}
+#pl .pli{display:flex;flex-direction:column;align-items:center;gap:clamp(.7rem,1.6vw,1.1rem)}
+#pl svg{width:clamp(110px,15vw,170px);height:auto;overflow:visible}
+#pl .plh{fill:#fff;transform-box:fill-box;transform-origin:center;animation:plh .5s var(--e) backwards}
+#pl .plf{transform-origin:80px 82px;animation:plspin 3.6s linear 1.2s infinite}
+#pl .plt{font:700 clamp(1.7rem,3.2vw,2.4rem)/1 var(--d);letter-spacing:-.04em;color:#fff;animation:plh .5s var(--e) .45s backwards}
+@keyframes plh{from{opacity:0;transform:translateY(10px) scale(.94)}}
 #pl .pp,#pl .pc{fill:var(--acc);transform-box:fill-box;transform-origin:center}
 #pl .pp{animation:plp .65s cubic-bezier(.34,1.56,.64,1) calc(150ms + var(--i)*70ms) backwards}
 #pl .pc{animation:plc .6s cubic-bezier(.34,1.56,.64,1) .7s backwards}
@@ -471,13 +483,46 @@ html.ld #pl,html.ld #pl *{animation-play-state:running!important}
 /* page transition: flower assembles, then next page opens with it */
 html.to #pl{display:grid;animation:plin .25s ease backwards}
 @keyframes plin{from{opacity:0}}
-html.to #pl svg,html.ta #pl svg{animation:none}
+html.to #pl .plf,html.ta #pl .plf{animation:none}
+html.to #pl .plh,html.to #pl .plt{animation-duration:.3s;animation-delay:0s}
+html.ta #pl .plh,html.ta #pl .plt{animation:none}
 html.to #pl .pp{animation-duration:.4s;animation-delay:calc(var(--i)*22ms)}
 html.to #pl .pc{animation-duration:.35s;animation-delay:.15s}
 html.ta #pl .pp,html.ta #pl .pc{animation:none}
 
+/* ===== телефон / тач: быстрые анимации, без сборки цветка и без «закреплённых» секций ===== */
+html.mob .hero{height:auto;min-height:100svh}
+html.mob .hero-in{position:relative;height:auto;min-height:100svh}
+html.mob .hint{display:none}
+/* телефон: вместо скролл-сборки цветок быстро «распускается» сам, а при скролле вращается */
+html.mob .mark .ct,html.mob .mark .lb{opacity:1}
+html.mob .mark .ct{animation:mbc .45s var(--e) .1s backwards}
+html.mob .mark .lb{animation:mbp .6s cubic-bezier(.34,1.56,.64,1) backwards}
+html.mob .mark .lb:nth-child(2){animation-delay:.25s}html.mob .mark .lb:nth-child(3){animation-delay:.29s}
+html.mob .mark .lb:nth-child(4){animation-delay:.33s}html.mob .mark .lb:nth-child(5){animation-delay:.37s}
+html.mob .mark .lb:nth-child(6){animation-delay:.41s}html.mob .mark .lb:nth-child(7){animation-delay:.45s}
+html.mob .mark .lb:nth-child(8){animation-delay:.49s}html.mob .mark .lb:nth-child(9){animation-delay:.53s}
+@keyframes mbc{from{opacity:0;transform:scale(.1)}}
+@keyframes mbp{from{opacity:0;transform:rotate(-70deg) scale(.05)}}
+html.mob .word span.c{animation-duration:.55s;animation-delay:calc(var(--i)*.05s + .05s)}
+html.mob .hero-row{animation:rise .5s var(--e) .25s backwards}
+html.mob .w>span{transition-duration:.6s;transition-delay:calc(var(--i)*30ms)}
+html.mob.js .reveal{transition-duration:.55s,.55s,.3s}
+html.mob body{transition:opacity .25s ease}
+html.mob body.out{transition:opacity .2s}
+html.mob .menu{transition:clip-path .45s var(--e),visibility 0s .45s}
+html.mob.mn .menu{transition:clip-path .45s var(--e),visibility 0s}
+html.mob.mn .menu a.m{transition:opacity .4s var(--e) calc(.1s + var(--i)*35ms),transform .5s var(--e) calc(.1s + var(--i)*35ms)}
+html.mob .steps li{transition-duration:.3s}
+@media(max-width:700px){
+.works.stk .pin{padding-top:3.5rem}
+.rail.stk{padding-left:4vw;padding-right:4vw;gap:.6rem;touch-action:pan-y}
+.works.stk .rail.stk .work.real{border-radius:20px;width:92vw;aspect-ratio:auto;height:clamp(300px,calc(100svh - 300px),600px)}
+.works.stk .rail.stk .work.real .art img{width:100%;height:100%;object-fit:cover;object-position:center}
+}
+
 /* works: pinned section, vertical scroll pans the rail sideways */
-.works.stk{height:calc(100svh + var(--d,0px))}
+.works.stk{height:calc(100svh + var(--wd,0px))}
 .works.stk .pin>.wrap{width:100%}
 .rail.stk .work.real{flex:0 0 auto;width:auto;height:clamp(240px,min(calc(100svh - 340px),calc(100vw*.9)),780px);aspect-ratio:1200/630;align-self:flex-start}
 @media(max-width:700px){
@@ -490,27 +535,96 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
 .rail:not(.stk) .work.real .art img{position:absolute;left:0;top:50%;width:100%;height:auto;transform:translateY(-50%);object-fit:contain;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
 .rail:not(.stk) .work.real .tag,.rail:not(.stk) .work.real::after{display:none}
 }
+
+/* works: тёмный экран, плашка-заголовок, контурный текст; карточки выезжают справа */
+.works{background:var(--ink);color:#fff}
+.works .wrap,.works .rail{position:relative;z-index:1}
+.works .wl{display:block;margin-bottom:1rem;text-align:center;font:400 .85rem var(--b);letter-spacing:.28em;text-transform:uppercase;color:#ffffffb3}
+.works h2{max-width:none;width:100%;margin:0;background:var(--acc);color:var(--ink);text-align:center;text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:clamp(1.5rem,6.4vw,3rem);line-height:1.15;padding:.35em .5em .3em}
+.works h2 em{color:inherit}
+.works .rail-ctl .bar{background:#ffffff33}
+.works .rbtn{color:#fff;border-color:#ffffff40}
+.ghost{position:absolute;left:4vw;bottom:clamp(2.5rem,9svh,5rem);z-index:0;pointer-events:none;user-select:none;font-family:var(--d);font-weight:700;font-size:clamp(4rem,24vw,15rem);line-height:.92;letter-spacing:.01em;color:transparent;-webkit-text-stroke:2px #ffffff59;white-space:nowrap}
+
+/* десктоп: надпись стоит на месте, работы (почти на весь экран) выезжают справа и закрывают её */
+@media(min-width:701px){
+.works.stk .pin{padding:0;justify-content:center}
+.works.stk .pin>.wrap:first-child{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.works.stk .ghost{position:absolute;left:4vw;right:auto;top:50%;bottom:auto;padding:0;display:block;
+  font-size:min(21vw,37svh);line-height:.86;letter-spacing:-.01em;white-space:nowrap;
+  color:transparent;background:none;-webkit-text-stroke:1.5px #ffffff59;
+  opacity:1;transform:translateY(-50%);clip-path:none}
+.works.stk .ghost br{display:block}
+.works.stk .rail.stk{position:absolute;left:0;right:0;top:0;bottom:0;z-index:1;display:flex;align-items:center;gap:1.4vw;padding:0 3vw 0 71vw}
+.works.stk .rail.stk .work.real{flex:0 0 auto;width:50vw;height:clamp(260px,min(calc(100svh - 12rem),34vw),720px);aspect-ratio:auto;align-self:center;border-radius:22px;box-shadow:0 0 0 1px #ffffff1f,0 30px 80px #000000b3}
+.works.stk .rail.stk .work.real .art img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.works.stk .pin>.wrap:last-child{position:absolute;left:0;right:0;bottom:1.1rem;z-index:3;pointer-events:none}
+.works.stk .rail-ctl{padding:0 4vw;gap:0}
+}
+@media(min-width:701px){.works h2{width:fit-content;max-width:100%;text-align:left;margin:0 auto 0 0}.works .wl{text-align:left}}
+/* лента вниз (телефон): текст проявляется при прокрутке, карточки слегка заходят на него */
+.works:not(.stk) .ghost{position:relative;left:auto;bottom:auto;padding:1.6rem 4vw 0;margin-bottom:-.28em;font-size:clamp(3.6rem,22vw,9rem);opacity:0;transform:translateX(-14vw);transition:opacity .9s var(--e),transform 1.1s var(--e)}
+.works:not(.stk) .ghost.on{opacity:1;transform:none}
+.works:not(.stk){padding-bottom:3rem}
+@media(max-width:700px){
+.works:not(.stk) .rail{padding-top:.2rem;gap:1.1rem}
+.works:not(.stk) .work.real{border-radius:22px;box-shadow:0 0 0 1px #ffffff26,0 18px 40px #00000066}
+.rail:not(.stk) .work.real .tag{display:block;left:.9rem;right:auto;bottom:.9rem;font-size:.8rem}
+.rail:not(.stk) .work.real::after{display:grid;transform:none;width:40px;height:40px;right:.9rem;top:.9rem;font-size:1.05rem}
+}
+
+/* works: full-screen cards, smooth slide-over (driven by JS variables) */
+.works.stk .pin{overflow:hidden}
+.works.stk .ghost{transform:translate3d(var(--gx,0px),-50%,0);opacity:var(--go,1);will-change:transform,opacity}
+.works.stk .rail.stk{display:block;padding:0;gap:0;overflow:hidden;counter-reset:wk}
+.works.stk .rail.stk .work.real{position:absolute;left:0;top:0;width:66vw;height:100%;flex:none;aspect-ratio:auto;align-self:auto;border-radius:0;box-shadow:none;background:#0b0b0d;cursor:pointer;transition:none;transform:translate3d(var(--x,100vw),0,0);will-change:transform;backface-visibility:hidden;counter-increment:wk}
+.works.stk .rail.stk .work.real .art{opacity:var(--ao,1)}
+.works.stk .rail.stk .work.real .art img{width:100%;height:100%;object-fit:cover;object-position:center top;transform:translate3d(var(--ix,0px),0,0) scale(var(--is,1.08));will-change:transform}
+.works.stk .rail.stk .work.real .art::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0b0b0d66 0,transparent 22%,transparent 55%,#0b0b0dcc 100%)}
+.works.stk .rail.stk .work.real .tag{display:block;left:4vw;right:auto;bottom:clamp(4.5rem,11svh,7rem);padding:0;background:none;color:#fff;font:700 clamp(1.4rem,3.2vw,3rem)/1.1 var(--d);letter-spacing:-.01em;opacity:1;z-index:2}
+.works.stk .rail.stk .work.real .tag::before{content:"0" counter(wk);display:block;margin-bottom:.6rem;font:500 .85rem var(--b);letter-spacing:.3em;opacity:.75}
+.works.stk .rail.stk .work.real::after{display:grid;transform:none;width:clamp(56px,5.2vw,88px);height:clamp(56px,5.2vw,88px);right:4vw;top:auto;bottom:clamp(4.5rem,11svh,7rem);font-size:clamp(1.3rem,2vw,2rem);background:#fff;color:var(--ink);transition:transform .5s var(--e)}
+.works.stk .rail.stk .work.real:hover::after{transform:rotate(45deg) scale(1.08)}
+
+/* works: header hides while pinned, no progress bar, closing outline text */
+html.wk nav{transform:translateY(calc(-100% - 1.4rem))!important}
+.works .wend{display:none}
+.works.stk .pin>.wrap:last-child{display:none}
+.works.stk .rail.stk .wend{display:block;position:absolute;left:0;top:0;width:100vw;height:100%;background:var(--ink);transform:translate3d(var(--x,100vw),0,0);will-change:transform;backface-visibility:hidden;pointer-events:none}
+.wend .t{position:absolute;left:0;right:0;top:50%;transform:translate3d(0,-50%,0);opacity:var(--to,1);font-family:var(--d);font-weight:700;font-size:min(21vw,37svh);line-height:.86;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1.5px #ffffff59;white-space:nowrap;user-select:none;will-change:opacity}
+.wend .t span{display:block}
+.wend .t span:nth-child(1){margin-left:3vw;transform:translate3d(0,calc(var(--sx,0)*-8svh),0)}
+.wend .t span:nth-child(2){margin-left:8vw;transform:translate3d(0,calc(var(--sx,0)*8svh),0)}
+.wend .t i{display:inline-block;font-style:normal;transform:translate3d(calc(var(--sx,0)*var(--o,0)*5vw),0,0);will-change:transform}
+
+
+/* comparison: small details (original look kept) */
+html.js .vs div:first-child li{text-decoration:none;background:linear-gradient(var(--acc),var(--acc)) 0 56%/0 2px no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .7s var(--e) calc(var(--n,0)*140ms + .2s)}
+html.js .vs.in div:first-child li{background-size:100% 2px}
+html.js .vs div:last-child li{transition:opacity .7s var(--e) calc(var(--n,0)*140ms + .5s),transform .8s var(--e) calc(var(--n,0)*140ms + .5s)}
+html.js .vs:not(.in) div:last-child li{opacity:0;transform:translateX(14px)}
+.vs li:nth-child(2){--n:1}.vs li:nth-child(3){--n:2}.vs li:nth-child(4){--n:3}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["ProfessionalService"],"@id":"https://cread.studio/#org","name":"Cread","url":"https://cread.studio/","logo":"https://cread.studio/icon-512.png","image":"https://cread.studio/og-image.png","email":"hello@cread.studio","description":"Cread — веб-студия из двух специалистов: дизайнер и верстальщик. Название, логотип и фирменный стиль, дизайн сайта, вёрстка и запуск под ключ.","slogan":"Дизайнер придумывает. Верстальщик строит.","knowsLanguage":"ru","knowsAbout":["разработка сайтов","дизайн сайтов","вёрстка сайтов","логотип и фирменный стиль","нейминг","лендинг"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Лендинг под ключ","description":"Одна страница, дизайн и вёрстка, запуск. Срок 2–3 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":90000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Сайт с нуля","description":"До восьми страниц, логотип и стиль, анимации. Месяц поддержки после запуска. Срок 4–6 недель."},"priceSpecification":{"@type":"PriceSpecification","minPrice":220000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Вёрстка сайта по макету","description":"Превращаем готовый макет в страницу. Срок 1–2 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":60000,"priceCurrency":"RUB"}}]},{"@type":"WebSite","@id":"https://cread.studio/#website","url":"https://cread.studio/","name":"Cread","inLanguage":"ru","publisher":{"@id":"https://cread.studio/#org"}},{"@type":"WebPage","@id":"https://cread.studio/#webpage","url":"https://cread.studio/","name":"Cread — веб-студия: дизайн и вёрстка сайтов под ключ","isPartOf":{"@id":"https://cread.studio/#website"},"about":{"@id":"https://cread.studio/#org"},"inLanguage":"ru"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно заказать только дизайн или только вёрстку?","acceptedAnswer":{"@type":"Answer","text":"Можно. Работаем и с чужими макетами, и с проектами, где нужен только дизайн."}},{"@type":"Question","name":"Как платить?","acceptedAnswer":{"@type":"Answer","text":"Половина перед началом, вторая половина после того, как вы приняли результат. Всё записываем в договор."}},{"@type":"Question","name":"Что вы отдаёте после запуска?","acceptedAnswer":{"@type":"Answer","text":"Исходники, доступы и короткую памятку, как менять тексты и картинки самому."}},{"@type":"Question","name":"Сколько будет правок?","acceptedAnswer":{"@type":"Answer","text":"Каждый этап согласуем до следующего, поэтому обычно хватает одной. Если нужно больше, договоримся отдельно."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["ProfessionalService"],"@id":"https://cread.studio/#org","name":"Cread","url":"https://cread.studio/","logo":"https://cread.studio/icon-512.png","image":"https://cread.studio/og-image.png","email":"hello@cread.studio","description":"Cread — веб-студия: дизайн, разработка и оптимизация сайтов. Название, логотип и фирменный стиль, дизайн сайта, разработка и запуск под ключ.","slogan":"Придумываем, рисуем, разрабатываем, ускоряем.","knowsLanguage":"ru","knowsAbout":["разработка сайтов","дизайн сайтов","вёрстка сайтов","оптимизация сайтов","логотип и фирменный стиль","нейминг","лендинг"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Лендинг под ключ","description":"Одна страница, дизайн и разработка, запуск. Срок 2–3 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":30000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Сайт с нуля","description":"До восьми страниц, логотип и стиль, анимации. Месяц поддержки после запуска. Срок 4–6 недель."},"priceSpecification":{"@type":"PriceSpecification","minPrice":80000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка сайта по макету","description":"Превращаем готовый макет в страницу. Срок 1–2 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":20000,"priceCurrency":"RUB"}}]},{"@type":"WebSite","@id":"https://cread.studio/#website","url":"https://cread.studio/","name":"Cread","inLanguage":"ru","publisher":{"@id":"https://cread.studio/#org"}},{"@type":"WebPage","@id":"https://cread.studio/#webpage","url":"https://cread.studio/","name":"Cread — веб-студия: дизайн, разработка и оптимизация сайтов под ключ","isPartOf":{"@id":"https://cread.studio/#website"},"about":{"@id":"https://cread.studio/#org"},"inLanguage":"ru"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно заказать только дизайн, только разработку или оптимизацию?","acceptedAnswer":{"@type":"Answer","text":"Можно. Работаем и с чужими макетами, и с проектами, где нужен только дизайн, и ускоряем уже готовые сайты."}},{"@type":"Question","name":"Как платить?","acceptedAnswer":{"@type":"Answer","text":"Половина перед началом, вторая половина после того, как вы приняли результат. Всё записываем в договор."}},{"@type":"Question","name":"Что вы отдаёте после запуска?","acceptedAnswer":{"@type":"Answer","text":"Исходники, доступы и короткую памятку, как менять тексты и картинки самому."}},{"@type":"Question","name":"Сколько будет правок?","acceptedAnswer":{"@type":"Answer","text":"Каждый этап согласуем до следующего, поэтому обычно хватает одной. Если нужно больше, договоримся отдельно."}}]}]}</script>
 </head>
 <body>
-<div id="pl" aria-hidden="true"><svg viewBox="12 14 136 136"><circle class="pc" cx="80" cy="82" r="46"/><circle class="pp" style="--x:8.9px;--y:-44.1px;--i:0" cx="88.9" cy="37.9" r="21"/><circle class="pp" style="--x:37.5px;--y:-24.9px;--i:1" cx="117.5" cy="57.1" r="21"/><circle class="pp" style="--x:44.1px;--y:8.9px;--i:2" cx="124.1" cy="90.9" r="21"/><circle class="pp" style="--x:24.9px;--y:37.5px;--i:3" cx="104.9" cy="119.5" r="21"/><circle class="pp" style="--x:-8.9px;--y:44.1px;--i:4" cx="71.1" cy="126.1" r="21"/><circle class="pp" style="--x:-37.5px;--y:24.9px;--i:5" cx="42.5" cy="106.9" r="21"/><circle class="pp" style="--x:-44.1px;--y:-8.9px;--i:6" cx="35.9" cy="73.1" r="21"/><circle class="pp" style="--x:-24.9px;--y:-37.5px;--i:7" cx="55.1" cy="44.5" r="21"/></svg></div>
+<div id="pl" aria-hidden="true"><div class="pli"><svg viewBox="-2 0 187 217"><g class="plh"><circle cx="80" cy="82" r="80"/><path d="M23 128V215H123V177H163V137L183 129L155 52L80 82Z"/></g><g class="plf"><circle class="pc" cx="80" cy="82" r="46"/><circle class="pp" style="--x:8.9px;--y:-44.1px;--i:0" cx="88.9" cy="37.9" r="21"/><circle class="pp" style="--x:37.5px;--y:-24.9px;--i:1" cx="117.5" cy="57.1" r="21"/><circle class="pp" style="--x:44.1px;--y:8.9px;--i:2" cx="124.1" cy="90.9" r="21"/><circle class="pp" style="--x:24.9px;--y:37.5px;--i:3" cx="104.9" cy="119.5" r="21"/><circle class="pp" style="--x:-8.9px;--y:44.1px;--i:4" cx="71.1" cy="126.1" r="21"/><circle class="pp" style="--x:-37.5px;--y:24.9px;--i:5" cx="42.5" cy="106.9" r="21"/><circle class="pp" style="--x:-44.1px;--y:-8.9px;--i:6" cx="35.9" cy="73.1" r="21"/><circle class="pp" style="--x:-24.9px;--y:-37.5px;--i:7" cx="55.1" cy="44.5" r="21"/></g></svg><div class="plt">Cread</div></div></div>
 <a class="skip" href="#main">К содержимому</a>
 <svg id="th" aria-hidden="true"><line id="ln" x1="0" y1="0" x2="0" y2="0"/></svg>
-<div class="node" id="n1" aria-hidden="true"><svg viewBox="15 17 130 130"><g><circle class="cp" style="--x:8.9px;--y:-44.1px;--i:0" cx="88.9" cy="37.9" r="21"/><circle class="cp" style="--x:37.5px;--y:-24.9px;--i:1" cx="117.5" cy="57.1" r="21"/><circle class="cp" style="--x:44.1px;--y:8.9px;--i:2" cx="124.1" cy="90.9" r="21"/><circle class="cp" style="--x:24.9px;--y:37.5px;--i:3" cx="104.9" cy="119.5" r="21"/><circle class="cp" style="--x:-8.9px;--y:44.1px;--i:4" cx="71.1" cy="126.1" r="21"/><circle class="cp" style="--x:-37.5px;--y:24.9px;--i:5" cx="42.5" cy="106.9" r="21"/><circle class="cp" style="--x:-44.1px;--y:-8.9px;--i:6" cx="35.9" cy="73.1" r="21"/><circle class="cp" style="--x:-24.9px;--y:-37.5px;--i:7" cx="55.1" cy="44.5" r="21"/><circle class="cc" cx="80" cy="82" r="46"/></g></svg><i>дизайнер</i></div>
-<div class="node" id="n2" aria-hidden="true"><i>верстальщик</i></div>
+<div class="node" id="n1" aria-hidden="true"><svg viewBox="15 17 130 130"><g><circle class="cp" style="--x:8.9px;--y:-44.1px;--i:0" cx="88.9" cy="37.9" r="21"/><circle class="cp" style="--x:37.5px;--y:-24.9px;--i:1" cx="117.5" cy="57.1" r="21"/><circle class="cp" style="--x:44.1px;--y:8.9px;--i:2" cx="124.1" cy="90.9" r="21"/><circle class="cp" style="--x:24.9px;--y:37.5px;--i:3" cx="104.9" cy="119.5" r="21"/><circle class="cp" style="--x:-8.9px;--y:44.1px;--i:4" cx="71.1" cy="126.1" r="21"/><circle class="cp" style="--x:-37.5px;--y:24.9px;--i:5" cx="42.5" cy="106.9" r="21"/><circle class="cp" style="--x:-44.1px;--y:-8.9px;--i:6" cx="35.9" cy="73.1" r="21"/><circle class="cp" style="--x:-24.9px;--y:-37.5px;--i:7" cx="55.1" cy="44.5" r="21"/><circle class="cc" cx="80" cy="82" r="46"/></g></svg><i>дизайн</i></div>
+<div class="node" id="n2" aria-hidden="true"><i>разработка</i></div>
 
 <nav aria-label="Основная навигация">
   <a class="logo" href="#top" aria-label="Cread, на главную">
     <svg class="" viewBox="-2 0 187 217" aria-hidden="true"><g fill="#fff"><circle cx="80" cy="82" r="80"/><path d="M23 128V215H123V177H163V137L183 129L155 52L80 82Z"/></g><g class="fl8" fill="#ec477e"><circle cx="80" cy="82" r="46"/><circle cx="88.9" cy="37.9" r="21"/><circle cx="117.5" cy="57.1" r="21"/><circle cx="124.1" cy="90.9" r="21"/><circle cx="104.9" cy="119.5" r="21"/><circle cx="71.1" cy="126.1" r="21"/><circle cx="42.5" cy="106.9" r="21"/><circle cx="35.9" cy="73.1" r="21"/><circle cx="55.1" cy="44.5" r="21"/></g></svg>Cread
   </a>
   <span class="sp"></span>
-  <a class="l" href="about.html">О нас</a><a class="l" href="#duo">Двое</a><a class="l" href="#process">Процесс</a><a class="l" href="#works">Работы</a><a class="l" href="#pricing">Цены</a><a class="l" href="#faq">Вопросы</a>
+  <a class="l" href="about.html">О нас</a><a class="l" href="#services">Услуги</a><a class="l" href="#process">Процесс</a><a class="l" href="#works">Работы</a><a class="l" href="#pricing">Цены</a><a class="l" href="#faq">Вопросы</a>
   <a class="btn" href="#talk">Обсудить<span class="d"> проект</span></a>
   <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
 </nav>
 <div class="menu" id="menu" aria-hidden="true">
-  <a class="m" href="about.html">О нас</a><a class="m" href="#duo">Двое</a><a class="m" href="#process">Процесс</a><a class="m" href="#works">Работы</a><a class="m" href="#pricing">Цены</a><a class="m" href="#faq">Вопросы</a>
+  <a class="m" href="about.html">О нас</a><a class="m" href="#services">Услуги</a><a class="m" href="#process">Процесс</a><a class="m" href="#works">Работы</a><a class="m" href="#pricing">Цены</a><a class="m" href="#faq">Вопросы</a>
   <a class="btn" href="#talk">Обсудить проект</a>
 </div>
 <button class="up" aria-label="Наверх">↑</button>
@@ -518,13 +632,13 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
 <main id="main">
 <header class="hero" id="top">
  <div class="hero-in">
-  <span class="hint" aria-hidden="true">листайте — соберём цветок</span>
+  <span class="hint" aria-hidden="true">листайте — покажем, как работаем</span>
   <div class="wrap">
-    <div class="stage"><svg class="mark" viewBox="-2 0 187 217" aria-hidden="true"><g fill="#fff"><circle cx="80" cy="82" r="80"/><path d="M23 128V215H123V177H163V137L183 129L155 52L80 82Z"/></g><g class="fl8" fill="#ec477e" id="fl"><circle class="ct" cx="80" cy="82" r="46"/><circle class="lb" cx="88.9" cy="37.9" r="21"/><circle class="lb" cx="117.5" cy="57.1" r="21"/><circle class="lb" cx="124.1" cy="90.9" r="21"/><circle class="lb" cx="104.9" cy="119.5" r="21"/><circle class="lb" cx="71.1" cy="126.1" r="21"/><circle class="lb" cx="42.5" cy="106.9" r="21"/><circle class="lb" cx="35.9" cy="73.1" r="21"/><circle class="lb" cx="55.1" cy="44.5" r="21"/></g></svg><h1 class="word"><span class="m" aria-hidden="true"><span class="c" style="--i:0">C</span></span><span class="m" aria-hidden="true"><span class="c" style="--i:1">r</span></span><span class="m" aria-hidden="true"><span class="c" style="--i:2">e</span></span><span class="m" aria-hidden="true"><span class="c" style="--i:3">a</span></span><span class="m" aria-hidden="true"><span class="c" style="--i:4">d</span></span><span class="sr">Cread — веб-студия: дизайн и вёрстка сайтов под ключ</span></h1></div>
+    <div class="stage"><svg class="mark" viewBox="-2 0 187 217" aria-hidden="true"><g fill="#fff"><circle cx="80" cy="82" r="80"/><path d="M23 128V215H123V177H163V137L183 129L155 52L80 82Z"/></g><g class="fl8" fill="#ec477e" id="fl"><circle class="ct" cx="80" cy="82" r="46"/><circle class="lb" cx="88.9" cy="37.9" r="21"/><circle class="lb" cx="117.5" cy="57.1" r="21"/><circle class="lb" cx="124.1" cy="90.9" r="21"/><circle class="lb" cx="104.9" cy="119.5" r="21"/><circle class="lb" cx="71.1" cy="126.1" r="21"/><circle class="lb" cx="42.5" cy="106.9" r="21"/><circle class="lb" cx="35.9" cy="73.1" r="21"/><circle class="lb" cx="55.1" cy="44.5" r="21"/></g></svg><h1 class="word"><span class="m" aria-hidden="true"><span class="c" style="--i:0">C</span></span><span class="m" aria-hidden="true"><span class="c" style="--i:1">r</span></span><span class="m" aria-hidden="true"><span class="c" style="--i:2">e</span></span><span class="m" aria-hidden="true"><span class="c" style="--i:3">a</span></span><span class="m" aria-hidden="true"><span class="c" style="--i:4">d</span></span><span class="sr">Cread — веб-студия: дизайн, разработка и оптимизация сайтов под ключ</span></h1></div>
   
     <div class="hero-row">
-      <p>Cread — веб-студия из двух человек. Дизайнер придумывает, верстальщик строит: сайт под ключ без менеджеров между вами и теми, кто делает.</p>
-      <div class="hero-meta"><span class="pill"><b>Дизайнер:</b> название, лого, макет</span><span class="pill"><b>Верстальщик:</b> код, анимации, запуск</span></div>
+      <p>Cread — веб-студия. Придумываем, рисуем, разрабатываем и ускоряем: сайт под ключ без менеджеров между вами и теми, кто делает.</p>
+      <div class="hero-meta"><span class="pill"><b>Дизайн:</b> название, лого, макеты</span><span class="pill"><b>Разработка:</b> код, анимации, запуск</span><span class="pill"><b>Оптимизация:</b> скорость, вес, SEO</span></div>
     </div>
   </div>
  </div>
@@ -532,16 +646,16 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
 
 <div class="mq" aria-hidden="true"><div id="mq"></div></div>
 
-<section id="duo">
+<section id="services">
   <div class="wrap">
     <div class="duo-h">
-      <h2>Два человека. Один <em>сайт</em>.</h2>
-      <p style="color:var(--mut)">Вот чем занят каждый. Они сидят рядом и договариваются за минуты, а не за недели.</p>
+      <h2>Дизайн и разработка. Один <em>результат</em>.</h2>
+      <p style="color:var(--mut)">Дизайн и код делаются рядом и согласуются за минуты, а не за недели. Поэтому сайт получается цельным и быстрым.</p>
     </div>
     <div class="duo-wrap">
       <div class="duo">
         <article class="panel p1" tabindex="0">
-          <h3>Дизайнер</h3>
+          <h3>Дизайн</h3>
           <svg class="dsg" viewBox="0 0 352 150" aria-hidden="true">
             <g class="lg">
               <line class="gl g1" pathLength="1" x1="8" y1="75" x2="344" y2="75"/>
@@ -555,12 +669,12 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
             </g>
           </svg>
           <div>
-            <p>Находит идею и превращает её в узнаваемый образ.</p>
-            <ul><li>Придумывает название</li><li>Рисует логотип и фирменный стиль</li><li>Проектирует структуру и экраны</li><li>Делает макеты и описывает анимации</li></ul>
+            <p>Находим идею и превращаем её в узнаваемый образ.</p>
+            <ul><li>Придумываем название</li><li>Рисуем логотип и фирменный стиль</li><li>Проектируем структуру и экраны</li><li>Делаем макеты и описываем анимации</li></ul>
           </div>
         </article>
         <article class="panel p2" tabindex="0">
-          <h3>Верстальщик</h3>
+          <h3>Разработка</h3>
           <pre aria-hidden="true"><s>.hero</s> {
   <u>animation</u>: rise 1.1s
     cubic-bezier(.2,.9,.2,1);
@@ -569,8 +683,8 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
 <s>// макет → код, пиксель в пиксель</s>
 </pre>
           <div>
-            <p>Собирает макет в живую страницу, которую приятно листать.</p>
-            <ul><li>Верстает точно по макету</li><li>Оживляет интерфейс анимациями</li><li>Адаптирует под телефон и планшет</li><li>Следит за скоростью и запускает сайт</li></ul>
+            <p>Собираем макет в живую страницу, которую приятно листать. Это и называют вёрсткой.</p>
+            <ul><li>Пишем код точно по макету</li><li>Оживляем интерфейс анимациями</li><li>Адаптируем под телефон и планшет</li><li>Оптимизируем скорость и запускаем сайт</li></ul>
           </div>
         </article>
       </div>
@@ -582,19 +696,21 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
   <div class="wrap">
     <h2>От идеи до запуска за <em>четыре шага</em></h2>
     <ol class="steps" id="steps">
-      <li><h3>Название и идея</h3><p>Дизайнер изучает бизнес, предлагает несколько названий и выбирает вместе с вами то, что запоминается.</p><span class="who">Дизайнер</span></li>
-      <li><h3>Логотип и стиль</h3><p>Цвета, шрифты, знак и правила их использования. Всё, из чего потом растёт сайт.</p><span class="who">Дизайнер</span></li>
-      <li><h3>Дизайн сайта</h3><p>Структура, макеты для компьютера и телефона, заметки о том, что и как должно двигаться. Верстальщик подключается здесь и сразу говорит, что реально сделать красиво и быстро.</p><span class="who">Оба</span></li>
-      <li><h3>Вёрстка и запуск</h3><p>Код пишем руками, без конструкторов: страница быстро открывается и не разваливается на старых телефонах. Проверяем на настоящих устройствах, подключаем домен и хостинг. Дизайнер принимает результат и сверяет с макетом. После релиза отвечаем, если что-то пошло не так.</p><span class="who dv">Верстальщик</span></li>
+      <li><h3>Название и идея</h3><p>Изучаем бизнес, предлагаем несколько названий и выбираем вместе с вами то, что запоминается.</p><span class="who">Дизайн</span></li>
+      <li><h3>Логотип и стиль</h3><p>Цвета, шрифты, знак и правила их использования. Всё, из чего потом растёт сайт.</p><span class="who">Дизайн</span></li>
+      <li><h3>Дизайн сайта</h3><p>Структура, макеты для компьютера и телефона, заметки о том, что и как должно двигаться. Разработка подключается здесь же и сразу подсказывает, что реально сделать красиво и быстро.</p><span class="who">Дизайн + разработка</span></li>
+      <li><h3>Разработка и запуск</h3><p>Код пишем руками, без конструкторов: страница быстро открывается и не разваливается на старых телефонах. Оптимизируем скорость и вес, проверяем на настоящих устройствах, подключаем домен и хостинг. Сверяем результат с макетом. После релиза отвечаем, если что-то пошло не так.</p><span class="who dv">Разработка и оптимизация</span></li>
     </ol>
   </div>
 </section>
 
 <section class="works" id="works"><div class="pin">
-  <div class="wrap"><h2>Что получается, когда двое работают <em>вместе</em></h2></div>
+  <div class="wrap"><span class="wl">Our works</span><h2>Что у нас <em>получается</em></h2></div>
+  <div class="ghost" aria-hidden="true">OUR <br>WORK</div>
   <div class="rail" id="rail">
     <a class="work w1 real" style="--im:url(technobox-640.webp)" href="https://fsduyx.github.io/techno/" target="_blank" rel="noopener" aria-label="Технобокс — сайт магазина техники в Симферополе: открыть сайт" title="Работа «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag">Технобокс · сайт магазина</small></a>
     <a class="work w3 real" style="--im:url(gran-640.webp)" href="https://fsduyx.github.io/gran/" target="_blank" rel="noopener" aria-label="Грань — сайт бюро архитекторов: открыть сайт" title="Сайт бюро «Грань»"><div class="art"><img onerror="this.remove()" src="gran-1200.webp" srcset="gran-640.webp 640w, gran-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт бюро архитекторов «Грань» — пример работы Cread"></div><small class="tag">Грань · сайт бюро архитекторов</small></a>
+    <div class="wend" aria-hidden="true"><div class="t"><span><i style="--o:-2">A</i><i style="--o:0">N</i><i style="--o:2">D</i></span><span><i style="--o:-3">M</i><i style="--o:-1">O</i><i style="--o:1">R</i><i style="--o:3">E</i></span></div></div>
   </div>
   <div class="wrap"><div class="rail-ctl"><button class="rbtn" data-d="-1" aria-label="Назад">←</button><button class="rbtn" data-d="1" aria-label="Вперёд">→</button><div class="bar"><i></i></div></div></div>
 </div></section>
@@ -604,17 +720,18 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
     <h2>Чем это лучше обычного <em>агентства</em></h2>
     <div class="vs">
       <div><h3>Обычно</h3><ul><li>Менеджер пересказывает задачу</li><li>Макет не совпадает с сайтом</li><li>Анимации «не получилось»</li><li>Три круга правок</li></ul></div>
-      <div><h3>В Cread</h3><ul><li>Вы говорите напрямую с теми, кто делает</li><li>Верстальщик видит макет с первого дня</li><li>Движение продумано до кода</li><li>Одна правка вместо трёх</li></ul></div>
+      <div><h3>В Cread</h3><ul><li>Вы говорите напрямую с теми, кто делает</li><li>Разработка подключается с первого дня</li><li>Движение продумано до кода</li><li>Одна правка вместо трёх</li></ul></div>
     </div>
   </div>
 </section>
 
 <section id="about" style="padding-top:2rem">
   <div class="wrap">
-    <h2>Кто с вами будет <em>работать</em></h2>
+    <h2>Как мы <em>работаем</em></h2>
     <div class="two">
-      <div><h3>Дизайнер</h3><p>Начинает не с рисунков, а с вопросов: чем вы занимаетесь, кто к вам приходит и что люди должны запомнить. Потом показывает черновики и объясняет, почему они такие.</p></div>
-      <div><h3>Верстальщик</h3><p>Смотрит на макет, пока он ещё не готов, и сразу говорит, что получится быстро, а что лучше упростить. Сайт собирает вручную и проверяет на живых телефонах.</p></div>
+      <div><h3>Дизайн</h3><p>Начинаем не с рисунков, а с вопросов: чем вы занимаетесь, кто к вам приходит и что люди должны запомнить. Потом показываем черновики и объясняем, почему они такие.</p></div>
+      <div><h3>Разработка</h3><p>Смотрим на макет, пока он ещё не готов, и сразу говорим, что получится быстро, а что лучше упростить. Сайт собираем вручную и проверяем на живых телефонах.</p></div>
+      <div><h3>Оптимизация</h3><p>Следим за скоростью: сжимаем картинки, чистим код, проверяем на слабых телефонах и медленном интернете, чтобы страница открывалась сразу.</p></div>
     </div>
     <a class="btn more" href="about.html">Познакомиться с нами <span>→</span></a>
   </div>
@@ -625,9 +742,9 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
     <h2>Цены</h2>
     <p class="sub">Примерно так. Точнее скажем, когда узнаем задачу.</p>
     <div class="rows">
-      <div class="row"><h3>Лендинг</h3><p>Одна страница, дизайн и вёрстка, запуск.</p><b>от 30 000 ₽ · 2–3 недели</b></div>
+      <div class="row"><h3>Лендинг</h3><p>Одна страница, дизайн и разработка, запуск.</p><b>от 30 000 ₽ · 2–3 недели</b></div>
       <div class="row"><h3>Сайт с нуля</h3><p>До восьми страниц, логотип и стиль, анимации. Месяц поддержки после запуска.</p><b>от 80 000 ₽ · 4–6 недель</b></div>
-      <div class="row"><h3>Только вёрстка</h3><p>У вас уже есть макет, мы превращаем его в страницу.</p><b>от 20 000 ₽ · 1–2 недели</b></div>
+      <div class="row"><h3>Разработка по макету</h3><p>У вас уже есть макет, мы превращаем его в страницу.</p><b>от 20 000 ₽ · 1–2 недели</b></div>
     </div>
   </div>
 </section>
@@ -636,7 +753,7 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
   <div class="wrap">
     <h2>Вопросы</h2>
     <div class="faq">
-      <details><summary>Можно заказать только дизайн или только вёрстку?</summary><p>Можно. Работаем и с чужими макетами, и с проектами, где нужен только дизайн.</p></details>
+      <details><summary>Можно заказать только дизайн, только разработку или оптимизацию?</summary><p>Можно. Работаем и с чужими макетами, и с проектами, где нужен только дизайн, и ускоряем уже готовые сайты.</p></details>
       <details><summary>Как платить?</summary><p>Половина перед началом, вторая половина после того, как вы приняли результат. Всё записываем в договор.</p></details>
       <details><summary>Что вы отдаёте после запуска?</summary><p>Исходники, доступы и короткую памятку, как менять тексты и картинки самому.</p></details>
       <details><summary>Сколько будет правок?</summary><p>Каждый этап согласуем до следующего, поэтому обычно хватает одной. Если нужно больше, договоримся отдельно.</p></details>
@@ -652,8 +769,8 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
     <h2>Расскажите, что будем <em>строить</em></h2>
     <a class="btn mg" href="mailto:hello@cread.studio">Написать нам</a>
     <a class="mail" href="mailto:hello@cread.studio">hello@cread.studio</a>
-    <div class="fl"><a href="about.html">О нас</a><a href="#duo">Двое</a><a href="#process">Процесс</a><a href="#works">Работы</a><a href="#pricing">Цены</a><a href="#faq">Вопросы</a></div>
-    <footer><span>Cread — веб-студия: дизайнер и верстальщик</span><span>© 2026 Cread</span></footer>
+    <div class="fl"><a href="about.html">О нас</a><a href="#services">Услуги</a><a href="#process">Процесс</a><a href="#works">Работы</a><a href="#pricing">Цены</a><a href="#faq">Вопросы</a></div>
+    <footer><span>Cread — веб-студия: дизайн, разработка, оптимизация</span><span>© 2026 Cread</span></footer>
   </div>
 </div>
 
@@ -681,10 +798,18 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
     fl.style.transform='rotate('+rot.toFixed(1)+'deg) scale('+(1+.05*Math.sin(ts*Math.PI)).toFixed(3)+')';
     H.style.setProperty('--p',p.toFixed(3));
   }
-  function onS(){var span=H.offsetHeight-innerHeight;hp(rm?.66:cl(scrollY/span));nav.classList.toggle('on',scrollY>span*.98)}
-  addEventListener('scroll',onS,{passive:true});addEventListener('resize',onS);onS();
+  var mobq=matchMedia('(max-width:700px),(hover:none) and (pointer:coarse)'),cleared=0;
+  function clr(){lb.forEach(function(el){el.style.opacity='';el.style.transform=''});ct.style.opacity='';ct.style.transform='';fl.style.transform='';H.style.removeProperty('--p')}
+  function onS(){
+    if(mobq.matches){ /* телефон: цветок уже собран, скролл ничего не пересчитывает */
+      if(!cleared){clr();cleared=1}
+      if(scrollY<innerHeight*2)fl.style.transform='rotate('+(scrollY*.35).toFixed(1)+'deg)';
+      nav.classList.toggle('on',scrollY>innerHeight*.45);return}
+    cleared=0;
+    var span=H.offsetHeight-innerHeight;hp(rm?.66:cl(scrollY/span));nav.classList.toggle('on',scrollY>span*.98)}
+  addEventListener('scroll',onS,{passive:true});addEventListener('resize',function(){document.documentElement.classList.toggle('mob',mobq.matches);onS()});onS();
   // marquee
-  var t=['Название','Логотип','Дизайн','Вёрстка','Анимации','Запуск'],h='';
+  var t=['Название','Логотип','Дизайн','Разработка','Анимации','Оптимизация','Запуск'],h='';
   for(var k=0;k<2;k++)t.forEach(function(x){h+='<span>'+x+'</span><span>✦</span>'});
   document.getElementById('mq').innerHTML=h+h;
   // theme
@@ -710,7 +835,7 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
     });
     // tilt on works
     document.querySelectorAll('.work').forEach(function(el){
-      el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      el.addEventListener('mousemove',function(e){if(el.closest('.works.stk'))return;var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
         el.style.transform='perspective(800px) rotateY('+x*12+'deg) rotateX('+(-y*12)+'deg)'});
       el.addEventListener('mouseleave',function(){el.style.transform=''});
     });
@@ -785,7 +910,7 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
     var u=new URL(a.href,location.href);
     if(u.origin!==location.origin||u.pathname===location.pathname||!/\.html?$/.test(u.pathname))return;
     e.preventDefault();var R=document.documentElement;if(R.classList.contains('to'))return;
-    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.body.classList.add('out');setTimeout(function(){location.href=a.href},380);return}
+    if(R.classList.contains('mob')||matchMedia('(prefers-reduced-motion:reduce)').matches){document.body.classList.add('out');setTimeout(function(){location.href=a.href},R.classList.contains('mob')?200:380);return}
     try{sessionStorage.setItem('pt','1')}catch(x){}
     R.classList.add('to');setTimeout(function(){location.href=a.href},600)});
   addEventListener('pageshow',function(e){if(e.persisted){document.documentElement.classList.remove('to');document.body.classList.remove('out');try{sessionStorage.removeItem('pt')}catch(x){}}});
@@ -799,17 +924,34 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
 (function(){
   var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,root=document.documentElement;
   var sec=document.getElementById('works'),rail=document.getElementById('rail'),pin=sec.querySelector('.pin'),d=0;
-  function pr(){if(!sec.classList.contains('stk'))return;
-    var r=sec.getBoundingClientRect(),h=sec.offsetHeight-pin.offsetHeight,p=h>0?Math.max(0,Math.min(1,-r.top/h)):0;rail.scrollLeft=p*d}
+  var cards=[].slice.call(rail.querySelectorAll('.work.real,.wend')),ghost=sec.querySelector('.ghost'),barI=sec.querySelector('.rail-ctl .bar i'),sp=0,raf=0;
+  function ez(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  function tp(){var r=sec.getBoundingClientRect(),h=sec.offsetHeight-pin.offsetHeight;return h>0?Math.max(0,Math.min(1,-r.top/h)):0}
+  var W=66,S=74,PK=22,HOLD=.1;  /* ширина карточки, старт ленты, полоса последней карточки (всё в vw), доля «паузы» в конце */
+  function paint(p){
+    var m=cards.length-1,vw=innerWidth,T=S+m*W-PK,q=Math.min(1,p/(1-HOLD)),sh=q*T;
+    cards.forEach(function(c,i){
+      var l=S+i*W-sh,s=c.style;
+      s.setProperty('--x',(l*vw/100).toFixed(2)+'px');
+      if(c.classList.contains('wend')){
+        var e=Math.max(0,Math.min(1,(100-l)/(100-PK)));
+        s.setProperty('--sx',(1-e).toFixed(3));s.setProperty('--to',Math.max(0,Math.min(1,(e-.15)/.6)).toFixed(3))}
+      else{
+        s.setProperty('--ix',(Math.max(-2.6,Math.min(2.6,(l-14)*.025))*vw/100).toFixed(2)+'px');
+        s.setProperty('--ao',(1-.45*Math.max(0,Math.min(1,-l/W))).toFixed(3))}});
+    if(ghost){ghost.style.setProperty('--gx',(-q*vw*.45).toFixed(2)+'px');ghost.style.setProperty('--go',(1-Math.min(1,q*2.4)).toFixed(3))}
+    if(barI)barI.style.setProperty('--rp',(.06+.94*p).toFixed(3));
+    sec.style.setProperty('--wp',p.toFixed(3))}
+  function tick(){raf=0;var t=tp();sp+=(t-sp)*.14;if(Math.abs(t-sp)<.0004)sp=t;else raf=requestAnimationFrame(tick);paint(sp)}
+  function pr(){if(!sec.classList.contains('stk')){root.classList.remove('wk');return}
+    var r=sec.getBoundingClientRect();root.classList.toggle('wk',r.top<=1&&r.bottom>=innerHeight-1);
+    if(!raf)raf=requestAnimationFrame(tick)}
   function lay(){
-    if(rm||innerHeight<500){sec.classList.remove('stk');rail.classList.remove('stk');sec.style.removeProperty('--d');rail.scrollLeft=0;d=0;return}
-    rail.classList.add('stk');
-    var w=rail.scrollWidth-rail.clientWidth;
-    if(w>40){d=w;sec.classList.add('stk');sec.style.setProperty('--d',Math.round(w*.85)+'px')}
-    else{d=0;sec.classList.remove('stk');rail.classList.remove('stk');sec.style.removeProperty('--d');rail.scrollLeft=0}
-    pr()}
+    if(rm||innerHeight<500||!cards.length||matchMedia('(max-width:700px),(hover:none) and (pointer:coarse)').matches){sec.classList.remove('stk');rail.classList.remove('stk');root.classList.remove('wk');sec.style.removeProperty('--wd');rail.scrollLeft=0;d=0;return}
+    rail.classList.add('stk');sec.classList.add('stk');sec.style.setProperty('--wd',Math.round(Math.max(innerHeight,Math.min(innerHeight*2.2,(S+(cards.length-1)*W-PK)/100*innerWidth*.32))/(1-HOLD))+'px');
+    sp=tp();paint(sp)}
   rail.parentNode.addEventListener('pointerdown',function(e){if(rail.classList.contains('stk'))e.stopPropagation()},true);
-  addEventListener('scroll',pr,{passive:true});addEventListener('resize',lay);addEventListener('load',lay);lay();
+  var lw=innerWidth;addEventListener('scroll',pr,{passive:true});addEventListener('resize',function(){if(matchMedia('(hover:none)').matches&&innerWidth===lw)return;lw=innerWidth;lay()});addEventListener('load',lay);lay();
   if(matchMedia('(pointer:fine)').matches&&!rm){
     var cu=document.createElement('div');cu.className='cur';cu.setAttribute('aria-hidden','true');document.body.appendChild(cu);
     var cx=0,cy=0,tx=0,ty=0,cr=0;
@@ -874,6 +1016,18 @@ html.ta #pl .pp,html.ta #pl .pc{animation:none}
     vis=e.isIntersecting;
     if(vis){clearTimeout(timer);timer=setTimeout(tick,n?0:500)}
   })},{threshold:.4}).observe(pre);
+})();
+</script>
+<script>
+(function(){var g=document.querySelector('.works .ghost');if(!g||!('IntersectionObserver' in window)){if(g)g.classList.add('on');return}
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)g.classList.add('on')})},{threshold:.35}).observe(g)})();
+</script>
+<script>
+(function(){
+  var v=document.querySelector('.vs');if(!v)return;
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches){v.classList.add('in');return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.classList.add('in');io.disconnect()}})},{threshold:.4});
+  io.observe(v);
 })();
 </script>
 </body>
