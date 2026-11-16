@@ -676,10 +676,46 @@ html.wk nav{transform:translateY(calc(-100% - 1.4rem))!important}
 .panel .dsg{max-width:min(100%,21rem)}
 .panel pre{font-size:clamp(.8rem,2.8vw,1rem)}
 }
-/* логотип в шапке: готовая картинка */
-nav .logo{align-items:center}
-nav .logo img{display:block;height:38px;width:auto}
-@media(max-width:560px){nav .logo img{height:32px}}
+
+/* ===== правки: картинки в блоке работ без обрезки + полупрозрачная подпись ===== */
+/* общая подпись-плашка (планшеты и всё, что не десктоп-лента и не телефон) */
+.work.real .tag{background:rgba(11,11,13,.42);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.9)}
+.work.real .tag i{opacity:.78}
+
+/* компьютер: картинка целиком (без обрезки текста на ней), по бокам — размытое продолжение */
+@media(min-width:701px){
+  .works.stk .rail.stk .work.real .art{background:#0b0b0d;overflow:hidden}
+  .works.stk .rail.stk .work.real .art::before{content:"";position:absolute;inset:-6%;background:var(--im) center/cover no-repeat;filter:blur(30px) saturate(1.15);opacity:.55}
+  .works.stk .rail.stk .work.real .art::after{background:none}
+  .works.stk .rail.stk .work.real .art img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain;object-position:center 40%;transform:none;will-change:auto}
+  .works.stk .rail.stk .work.real .tag{
+    padding:.85rem 1.4rem 1rem;border-radius:18px;
+    background:rgba(11,11,13,.38);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
+    border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.9);
+    font:500 clamp(.9rem,1.1vw,1.05rem)/1.3 var(--b);letter-spacing:0}
+  .works.stk .rail.stk .work.real .tag::before{margin-bottom:.4rem;opacity:.7}
+  .works.stk .rail.stk .work.real .tag b{display:block;font:700 clamp(1.4rem,2.4vw,2.4rem)/1.05 var(--d);letter-spacing:-.01em}
+  .works.stk .rail.stk .work.real .tag i{display:block;margin-top:.3rem;opacity:.78}
+  .works.stk .rail.stk .work.real .tag i::before{content:none}
+}
+
+/* телефон: без рамок и подложек, картинка в родных пропорциях 1200x630, подпись — полупрозрачная плашка поверх */
+@media(max-width:700px){
+  .works:not(.stk) .work.real,.rail:not(.stk) .work.real{display:block;position:relative;height:auto;aspect-ratio:1200/630;background:none;border:0;outline:0;box-shadow:none;border-radius:16px;overflow:hidden}
+  .rail:not(.stk) .work.real::before{content:none;display:none}
+  .rail:not(.stk) .work.real .art{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;border:0;outline:0;box-shadow:none}
+  .rail:not(.stk) .work.real .art::after{content:none}
+  .rail:not(.stk) .work.real .art img{object-fit:cover;object-position:center;border:0;outline:0}
+  .rail:not(.stk) .work.real .tag{
+    position:absolute;z-index:2;left:auto;right:.6rem;top:.6rem;bottom:auto;max-width:56%;
+    padding:.45rem .8rem .5rem;border:0;border-radius:12px;
+    background:rgba(11,11,13,.32);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    color:rgba(255,255,255,.88)}
+  .rail:not(.stk) .work.real .tag::before{content:none;display:none}
+  .rail:not(.stk) .work.real .tag b{font-size:1.2rem}
+  .rail:not(.stk) .work.real .tag i{margin-top:.1rem;font-size:.78rem;color:rgba(255,255,255,.78);opacity:1}
+  .rail:not(.stk) .work.real::after{z-index:3;width:36px;height:36px;right:.6rem;bottom:.6rem;font-size:1rem;background:rgba(255,255,255,.55);color:#0b0b0d;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["ProfessionalService"],"@id":"https://cread.studio/#org","name":"Cread","url":"https://cread.studio/","logo":"https://cread.studio/icon-512.png","image":"https://cread.studio/og-image.png","email":"hello@cread.studio","description":"Cread — веб-студия: дизайн, разработка и оптимизация сайтов. Название, логотип и фирменный стиль, дизайн сайта, разработка и запуск под ключ.","slogan":"Придумываем, рисуем, разрабатываем, ускоряем.","knowsLanguage":"ru","knowsAbout":["разработка сайтов","дизайн сайтов","вёрстка сайтов","оптимизация сайтов","логотип и фирменный стиль","нейминг","лендинг"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Лендинг под ключ","description":"Одна страница, дизайн и разработка, запуск. Срок 2–3 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":30000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Сайт с нуля","description":"До восьми страниц, логотип и стиль, анимации. Месяц поддержки после запуска. Срок 4–6 недель."},"priceSpecification":{"@type":"PriceSpecification","minPrice":80000,"priceCurrency":"RUB"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка сайта по макету","description":"Превращаем готовый макет в страницу. Срок 1–2 недели."},"priceSpecification":{"@type":"PriceSpecification","minPrice":20000,"priceCurrency":"RUB"}}]},{"@type":"WebSite","@id":"https://cread.studio/#website","url":"https://cread.studio/","name":"Cread","inLanguage":"ru","publisher":{"@id":"https://cread.studio/#org"}},{"@type":"WebPage","@id":"https://cread.studio/#webpage","url":"https://cread.studio/","name":"Cread — веб-студия: дизайн, разработка и оптимизация сайтов под ключ","isPartOf":{"@id":"https://cread.studio/#website"},"about":{"@id":"https://cread.studio/#org"},"inLanguage":"ru"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно заказать только дизайн, только разработку или оптимизацию?","acceptedAnswer":{"@type":"Answer","text":"Можно. Работаем и с чужими макетами, и с проектами, где нужен только дизайн, и ускоряем уже готовые сайты."}},{"@type":"Question","name":"Как платить?","acceptedAnswer":{"@type":"Answer","text":"Половина перед началом, вторая половина после того, как вы приняли результат. Всё записываем в договор."}},{"@type":"Question","name":"Что вы отдаёте после запуска?","acceptedAnswer":{"@type":"Answer","text":"Исходники, доступы и короткую памятку, как менять тексты и картинки самому."}},{"@type":"Question","name":"Сколько будет правок?","acceptedAnswer":{"@type":"Answer","text":"Каждый этап согласуем до следующего, поэтому обычно хватает одной. Если нужно больше, договоримся отдельно."}}]}]}</script>
 </head>
@@ -692,7 +728,7 @@ nav .logo img{display:block;height:38px;width:auto}
 
 <nav aria-label="Основная навигация">
   <a class="logo" href="#top" aria-label="Cread, на главную">
-    <img src="cread-logo.png" alt="Cread — creative agency" width="301" height="102" decoding="async">
+    <svg class="" viewBox="-2 0 187 217" aria-hidden="true"><g fill="#fff"><circle cx="80" cy="82" r="80"/><path d="M23 128V215H123V177H163V137L183 129L155 52L80 82Z"/></g><g class="fl8" fill="#ec477e"><circle cx="80" cy="82" r="46"/><circle cx="88.9" cy="37.9" r="21"/><circle cx="117.5" cy="57.1" r="21"/><circle cx="124.1" cy="90.9" r="21"/><circle cx="104.9" cy="119.5" r="21"/><circle cx="71.1" cy="126.1" r="21"/><circle cx="42.5" cy="106.9" r="21"/><circle cx="35.9" cy="73.1" r="21"/><circle cx="55.1" cy="44.5" r="21"/></g></svg>Cread
   </a>
   <span class="sp"></span>
   <a class="l" href="about.html">О нас</a><a class="l" href="#services">Услуги</a><a class="l" href="#process">Процесс</a><a class="l" href="#works">Работы</a><a class="l" href="#pricing">Цены</a><a class="l" href="#faq">Вопросы</a>
