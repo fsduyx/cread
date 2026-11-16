@@ -678,25 +678,26 @@ html.wk nav{transform:translateY(calc(-100% - 1.4rem))!important}
 }
 
 /* ===== правки: картинки в блоке работ без обрезки + полупрозрачная подпись ===== */
-/* общая подпись-плашка (планшеты и всё, что не десктоп-лента и не телефон) */
-.work.real .tag{background:rgba(11,11,13,.42);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.9)}
+/* подписи на карточках удалены; общая подпись-плашка (планшеты и всё, что не десктоп-лента и не телефон) */
+.work.real .tag{background:rgba(11,11,13,.42);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);border:0;color:rgba(255,255,255,.9)}
 .work.real .tag i{opacity:.78}
 
-/* компьютер: картинка целиком (без обрезки текста на ней), по бокам — размытое продолжение */
+/* компьютер: карточка ровно по размеру картинки (1200x630) — без полос сверху и снизу, подпись без рамки */
 @media(min-width:701px){
-  .works.stk .rail.stk .work.real .art{background:#0b0b0d;overflow:hidden}
-  .works.stk .rail.stk .work.real .art::before{content:"";position:absolute;inset:-6%;background:var(--im) center/cover no-repeat;filter:blur(30px) saturate(1.15);opacity:.55}
-  .works.stk .rail.stk .work.real .art::after{background:none}
-  .works.stk .rail.stk .work.real .art img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain;object-position:center 40%;transform:none;will-change:auto}
+  .works.stk .rail.stk .work.real{top:calc(50% - 17.325vw);height:34.65vw;background:none}
+  .works.stk .rail.stk .work.real .art{background:none;overflow:hidden}
+  .works.stk .rail.stk .work.real .art::before,.works.stk .rail.stk .work.real .art::after{content:none;display:none}
+  .works.stk .rail.stk .work.real .art img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:none;will-change:auto}
   .works.stk .rail.stk .work.real .tag{
-    padding:.85rem 1.4rem 1rem;border-radius:18px;
-    background:rgba(11,11,13,.38);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
-    border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.9);
-    font:500 clamp(.9rem,1.1vw,1.05rem)/1.3 var(--b);letter-spacing:0}
-  .works.stk .rail.stk .work.real .tag::before{margin-bottom:.4rem;opacity:.7}
-  .works.stk .rail.stk .work.real .tag b{display:block;font:700 clamp(1.4rem,2.4vw,2.4rem)/1.05 var(--d);letter-spacing:-.01em}
+    left:auto;right:1.2rem;top:1.2rem;bottom:auto;max-width:50%;
+    padding:.8rem 1.2rem .9rem;border:0;border-radius:16px;
+    background:rgba(11,11,13,.34);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);
+    color:rgba(255,255,255,.9);font:500 clamp(.85rem,1vw,1rem)/1.3 var(--b);letter-spacing:0}
+  .works.stk .rail.stk .work.real .tag::before{content:none;display:none}
+  .works.stk .rail.stk .work.real .tag b{display:block;font:700 clamp(1.3rem,2vw,2rem)/1.05 var(--d);letter-spacing:-.01em}
   .works.stk .rail.stk .work.real .tag i{display:block;margin-top:.3rem;opacity:.78}
   .works.stk .rail.stk .work.real .tag i::before{content:none}
+  .works.stk .rail.stk .work.real::after{right:1.2rem;bottom:1.2rem}
 }
 
 /* телефон: без рамок и подложек, картинка в родных пропорциях 1200x630, подпись — полупрозрачная плашка поверх */
@@ -820,8 +821,8 @@ html.wk nav{transform:translateY(calc(-100% - 1.4rem))!important}
   <div class="wrap"><span class="wl">Our works</span><h2>Что у нас <em>получается</em></h2></div>
   <div class="ghost" aria-hidden="true">OUR <br>WORK</div>
   <div class="rail" id="rail">
-    <a class="work w1 real" style="--im:url(technobox-640.webp)" href="https://fsduyx.github.io/techno/" target="_blank" rel="noopener" aria-label="Технобокс — сайт магазина техники в Симферополе: открыть сайт" title="Работа «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div><small class="tag"><b>Технобокс</b><i>сайт магазина</i></small></a>
-    <a class="work w3 real" style="--im:url(gran-640.webp)" href="https://fsduyx.github.io/gran/" target="_blank" rel="noopener" aria-label="Грань — сайт бюро архитекторов: открыть сайт" title="Сайт бюро «Грань»"><div class="art"><img onerror="this.remove()" src="gran-1200.webp" srcset="gran-640.webp 640w, gran-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт бюро архитекторов «Грань» — пример работы Cread"></div><small class="tag"><b>Грань</b><i>сайт бюро архитекторов</i></small></a>
+    <a class="work w1 real" style="--im:url(technobox-640.webp)" href="https://fsduyx.github.io/techno/" target="_blank" rel="noopener" aria-label="Технобокс — сайт магазина техники в Симферополе: открыть сайт" title="Работа «Технобокс»"><div class="art"><img onerror="this.remove()" src="technobox-1200.webp" srcset="technobox-640.webp 640w, technobox-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт магазина техники «Технобокс» в Симферополе — пример работы Cread"></div></a>
+    <a class="work w3 real" style="--im:url(gran-640.webp)" href="https://fsduyx.github.io/gran/" target="_blank" rel="noopener" aria-label="Грань — сайт бюро архитекторов: открыть сайт" title="Сайт бюро «Грань»"><div class="art"><img onerror="this.remove()" src="gran-1200.webp" srcset="gran-640.webp 640w, gran-1200.webp 1200w" sizes="(max-width:900px) 86vw, 966px" width="1200" height="630" loading="lazy" decoding="async" alt="Сайт бюро архитекторов «Грань» — пример работы Cread"></div></a>
     <div class="wend" aria-hidden="true"><div class="t"><span><i style="--o:-2">A</i><i style="--o:0">N</i><i style="--o:2">D</i></span><span><i style="--o:-3">M</i><i style="--o:-1">O</i><i style="--o:1">R</i><i style="--o:3">E</i></span></div></div>
   </div>
   <div class="wrap"><div class="rail-ctl"><button class="rbtn" data-d="-1" aria-label="Назад">←</button><button class="rbtn" data-d="1" aria-label="Вперёд">→</button><div class="bar"><i></i></div></div></div>
